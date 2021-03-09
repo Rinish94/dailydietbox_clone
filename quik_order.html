@@ -9,70 +9,28 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      body {
-        background-color: gray;
-      }
-      #quick-order {
-        width: 980px;
-        background-color: white;
-        margin: auto;
-        padding: 20px;
-      }
-      .heading {
-        display: flex;
-        margin: auto;
-        justify-content: center;
-      }
-      .option {
-        display: flex;
-        justify-content: space-between;
-        height: 40px;
-        margin-bottom: 20px;
-      }
-      .option > button {
-        width: 200px;
-        text-align: left;
-        background-color: white;
-        border: 1px solid gray;
-      }
-      .option > h2 {
-        margin: 0;
-        margin-top: 8px;
-      }
-      .item-container {
-        display: flex;
-      }
-      .filter-list {
-        width: 240px;
-      }
-      .list-item {
-        display: flex;
-        justify-content: space-between;
-
-        border-bottom: 1px solid gray;
-      }
-      .border-top {
-        border-top: 1px solid gray;
-      }
-      .list-item > * {
-        margin: 0;
-        padding: 20px 0px 20px 0px;
-      }
-    </style>
+    <link rel="stylesheet" href="quick.css" />
   </head>
   <body>
-    <div id="quick-order">
-      <div class="heading">
-        <h2>Qucik Order</h2>
+    <div class="heading">
+      <div style="display: flex">
+        <hr />
+        <span class="dot"></span>
       </div>
+      <h2>Quick Order</h2>
+      <div style="display: flex">
+        <span class="dot"></span>
+        <hr />
+      </div>
+    </div>
+    <div id="quick-order">
       <div class="option">
         <h2>Filter by</h2>
         <button>Sort by</button>
       </div>
       <div class="items-container">
         <div class="filter-list">
-          <div class="list-item">
+          <div class="list-item border-top">
             <p>Price</p>
             <i class="fa fa-plus"></i>
           </div>
@@ -97,18 +55,75 @@
             <i class="fa fa-plus"></i>
           </div>
         </div>
-        <div class="items"></div>
+        <div id="products" class="items">
+          <!--             
+          <div class="card">
+            <div class="tag">Veg & Vegan</div>
+            <div class="card-img">
+              <img
+                src="https://static.wixstatic.com/media/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.webp"
+                alt=""
+              />
+              <p class="tag2">Quick View</p>
+            </div>
+
+            <div class="card-text">
+              <p>Peanut Butter</p>
+              <div class="card-text-divider"></div>
+              <p><i class="fa fa-rupee"></i> 130.00</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tag">Veg & Vegan</div>
+            <div class="card-img">
+              <img
+                src="https://static.wixstatic.com/media/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.webp"
+                alt=""
+              />
+              <p class="tag2">Quick View</p>
+            </div>
+
+            <div class="card-text">
+              <p>Peanut Butter</p>
+              <div class="card-text-divider"></div>
+              <p>130.00</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tag">Veg & Vegan</div>
+            <div class="card-img">
+              <img
+                src="https://static.wixstatic.com/media/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.webp"
+                alt=""
+              />
+              <p class="tag2">Quick View</p>
+            </div>
+
+            <div class="card-text">
+              <p>Peanut Butter</p>
+              <div class="card-text-divider"></div>
+              <p>130.00</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tag">Veg & Vegan</div>
+            <div class="card-img">
+              <img
+                src="https://static.wixstatic.com/media/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.webp"
+                alt=""
+              />
+              <p class="tag2">Quick View</p>
+            </div>
+
+            <div class="card-text">
+              <p>Peanut Butter</p>
+              <div class="card-text-divider"></div>
+              <p>130.00</p>
+            </div>
+          </div> -->
+        </div>
       </div>
     </div>
-    <script>
-      var obj = [
-        {
-          image: "",
-          name: "Peanut Butter Banana",
-          price: 130,
-        },
-      ];
-      window.onload = () => {};
-    </script>
+    <script src="quick_order.js"></script>
   </body>
 </html>

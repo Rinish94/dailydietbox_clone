@@ -1,0 +1,125 @@
+body {
+  background-color: gray;
+}
+#quick-order {
+  width: 980px;
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+}
+.heading {
+  width: 1020px;
+  background-color: white;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+.heading > h2 {
+  margin: 12px;
+}
+hr {
+  width: 350px;
+  height: 1px;
+  background-color: green;
+  border: 1px solid green;
+  margin-top: 25px;
+}
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  top: 14px;
+}
+.option {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  margin-bottom: 20px;
+}
+.option > button {
+  width: 200px;
+  text-align: left;
+  background-color: white;
+  border: 1px solid gray;
+}
+.option > h2 {
+  margin: 0;
+  margin-top: 8px;
+}
+.items-container {
+  display: flex;
+}
+.filter-list {
+  flex-basis: 135%;
+}
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+}
+.border-top {
+  border-top: 1px solid gray;
+}
+.list-item > * {
+  margin: 0;
+  padding: 20px 0px 20px 0px;
+}
+.items {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  width: 347px;
+  margin: 10px 0px 8px 28px;
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+}
+.card:hover {
+  border: 1px solid black;
+}
+.card-img > p {
+  display: none;
+}
+.card-img > img {
+  width: 100%;
+  margin: 0;
+}
+.card-img {
+  padding: 0;
+}
+.card-text {
+  color: green;
+}
+.card-text-divider {
+  border-bottom: 1px solid lightgray;
+}
+.card-text > p:nth-child(1) {
+  font-size: 18px;
+}
+.card-text > p {
+  margin: 10px;
+}
+.tag {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-color: orange;
+  padding: 5px;
+  color: white;
+}
+.tag2 {
+  position: absolute;
+  top: 65%;
+  color: white;
+  background-color: rgb(96, 216, 96);
+  width: 327px;
+  padding: 10px;
+  margin: 0%;
+  text-align: center;
+}
