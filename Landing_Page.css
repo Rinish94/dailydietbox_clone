@@ -142,4 +142,16 @@ body {
     font-size: 4.4rem;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + #firstSect {
+    padding-top: 60px;
+}
+
+
+
 
