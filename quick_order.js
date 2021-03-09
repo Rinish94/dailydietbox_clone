@@ -118,6 +118,7 @@ function addItems(data) {
   var rupee = document.createElement("i");
   rupee.setAttribute("class", "fa fa-rupee");
   card.setAttribute("class", "card");
+  card.setAttribute("id", data.id);
   cardImg.setAttribute("class", "card-img");
   tag2.setAttribute("class", "tag2");
   cardText.setAttribute("class", "card-text");
@@ -142,6 +143,7 @@ function addItems(data) {
   }
   card.addEventListener("mouseenter", showTag2);
   card.addEventListener("mouseleave", hideTag2);
+  card.addEventListener("click", itemIdSend);
   card.append(cardImg);
   card.append(cardText);
   products.append(card);
@@ -152,4 +154,8 @@ function showTag2(event) {
 
 function hideTag2(event) {
   event.target.querySelector(".card-img>p").style.display = "none";
+}
+
+function itemIdSend(event) {
+  window.location = `quik_order.html?product_id=${this.id}`;
 }
