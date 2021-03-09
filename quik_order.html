@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: gray;
+      }
+      #quick-order {
+        width: 980px;
+        background-color: white;
+        margin: auto;
+        padding: 20px;
+      }
+      .heading {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+      }
+      .option {
+        display: flex;
+        justify-content: space-between;
+        height: 40px;
+        margin-bottom: 20px;
+      }
+      .option > button {
+        width: 200px;
+        text-align: left;
+        background-color: white;
+        border: 1px solid gray;
+      }
+      .option > h2 {
+        margin: 0;
+        margin-top: 8px;
+      }
+      .item-container {
+        display: flex;
+      }
+      .filter-list {
+        width: 240px;
+      }
+      .list-item {
+        display: flex;
+        justify-content: space-between;
+
+        border-bottom: 1px solid gray;
+      }
+      .border-top {
+        border-top: 1px solid gray;
+      }
+      .list-item > * {
+        margin: 0;
+        padding: 20px 0px 20px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="quick-order">
+      <div class="heading">
+        <h2>Qucik Order</h2>
+      </div>
+      <div class="option">
+        <h2>Filter by</h2>
+        <button>Sort by</button>
+      </div>
+      <div class="items-container">
+        <div class="filter-list">
+          <div class="list-item">
+            <p>Price</p>
+            <i class="fa fa-plus"></i>
+          </div>
+          <div class="list-item">
+            <p>Milk Options</p>
+            <i class="fa fa-plus"></i>
+          </div>
+          <div class="list-item">
+            <p>Seed Options</p>
+            <i class="fa fa-plus"></i>
+          </div>
+          <div class="list-item">
+            <p>Seeds</p>
+            <i class="fa fa-plus"></i>
+          </div>
+          <div class="list-item">
+            <p>Veg / Non-Veg</p>
+            <i class="fa fa-plus"></i>
+          </div>
+          <div class="list-item">
+            <p>Bread Options</p>
+            <i class="fa fa-plus"></i>
+          </div>
+        </div>
+        <div class="items"></div>
+      </div>
+    </div>
+    <script>
+      var obj = [
+        {
+          image: "",
+          name: "Peanut Butter Banana",
+          price: 130,
+        },
+      ];
+      window.onload = () => {};
+    </script>
+  </body>
+</html>
