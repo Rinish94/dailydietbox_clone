@@ -7,6 +7,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="quick.css" />
@@ -26,7 +31,14 @@
     <div id="quick-order">
       <div class="option">
         <h2>Filter by</h2>
-        <button>Sort by</button>
+        <select id="sort">
+          <option value="orignal">Sort By</option>
+          <option value="newest">Newest</option>
+          <option value="lowToHigh">Price (Low to High)</option>
+          <option value="HighTolow">Price (High to Low)</option>
+          <option value="nameAZ">Name (A - Z)</option>
+          <option value="nameZA">Name (Z - A)</option>
+        </select>
       </div>
       <div class="items-container">
         <div class="filter-list">
@@ -55,73 +67,7 @@
             <i class="fa fa-plus"></i>
           </div>
         </div>
-        <div id="products" class="items">
-          <!--             
-          <div class="card">
-            <div class="tag">Veg & Vegan</div>
-            <div class="card-img">
-              <img
-                src="https://static.wixstatic.com/media/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.webp"
-                alt=""
-              />
-              <p class="tag2">Quick View</p>
-            </div>
-
-            <div class="card-text">
-              <p>Peanut Butter</p>
-              <div class="card-text-divider"></div>
-              <p><i class="fa fa-rupee"></i> 130.00</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="tag">Veg & Vegan</div>
-            <div class="card-img">
-              <img
-                src="https://static.wixstatic.com/media/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.webp"
-                alt=""
-              />
-              <p class="tag2">Quick View</p>
-            </div>
-
-            <div class="card-text">
-              <p>Peanut Butter</p>
-              <div class="card-text-divider"></div>
-              <p>130.00</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="tag">Veg & Vegan</div>
-            <div class="card-img">
-              <img
-                src="https://static.wixstatic.com/media/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.webp"
-                alt=""
-              />
-              <p class="tag2">Quick View</p>
-            </div>
-
-            <div class="card-text">
-              <p>Peanut Butter</p>
-              <div class="card-text-divider"></div>
-              <p>130.00</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="tag">Veg & Vegan</div>
-            <div class="card-img">
-              <img
-                src="https://static.wixstatic.com/media/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_6b3583349911488ea9f04d8ebda727fa~mv2.webp"
-                alt=""
-              />
-              <p class="tag2">Quick View</p>
-            </div>
-
-            <div class="card-text">
-              <p>Peanut Butter</p>
-              <div class="card-text-divider"></div>
-              <p>130.00</p>
-            </div>
-          </div> -->
-        </div>
+        <div id="products" class="items"></div>
       </div>
     </div>
     <script src="quick_order.js"></script>

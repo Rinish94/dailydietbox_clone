@@ -1,11 +1,15 @@
 body {
-  background-color: gray;
+  background-color: rgb(228, 228, 228);
+  font-family: "Raleway", sans-serif;
 }
 #quick-order {
   width: 980px;
   background-color: white;
   margin: auto;
   padding: 20px;
+}
+h2 {
+  font-weight: 400;
 }
 .heading {
   width: 1020px;
@@ -20,7 +24,7 @@ body {
   margin: 12px;
 }
 hr {
-  width: 350px;
+  width: 380px;
   height: 1px;
   background-color: green;
   border: 1px solid green;
@@ -41,7 +45,7 @@ hr {
   height: 40px;
   margin-bottom: 20px;
 }
-.option > button {
+.option > #sort {
   width: 200px;
   text-align: left;
   background-color: white;
@@ -98,6 +102,8 @@ hr {
 }
 .card-text-divider {
   border-bottom: 1px solid lightgray;
+  width: 70%;
+  margin-left: 10px;
 }
 .card-text > p:nth-child(1) {
   font-size: 18px;
