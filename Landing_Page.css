@@ -8,6 +8,7 @@ body {
     height: 90px;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 
 #nav {
@@ -79,18 +80,18 @@ body {
 
 #firstSect{
     
-    height: 760px;
+    /* height: 760px; */
     background-image: url(https://static.wixstatic.com/media/035244_881cbe4617f449cab844cb6a48b5fbeb~mv2_d_2475_2475_s_4_2.jpeg/v1/fill/w_1583,h_760,al_c,q_85,usm_0.66_1.00_0.01/035244_881cbe4617f449cab844cb6a48b5fbeb~mv2_d_2475_2475_s_4_2.webp);
     background-color: #67B521;
+    background-size: cover;
+
 }
 #firstSect1{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-
     height: 760px;
     background-color:rgba(240, 230, 230, 0.8);
     display: flex;
-    /* flex-direction: row;  */
 }
 #firstSect11{
     height: 760px;
@@ -99,7 +100,7 @@ body {
     font-size: 3rem;
     text-align: center;
     line-height: 5rem;
-    padding-top: 20px;
+    padding-top: 35px;
     color: white;
 
 }
@@ -131,17 +132,17 @@ body {
 
 }
 #fsectFont2, #fsectFont3{
-    opacity: 0.7;
+    color: rgba(0, 0, 0, 0.7);
 }
 #fsectFont2 > p{
     font-size: 1.8rem;
     line-height: 7px;
-    opacity: 0.7;
 }
 .fsectFont12 {
     font-size: 4.4rem;
 }
 
+/* For sticky Navbar */
 .sticky {
     position: fixed;
     top: 0;
@@ -151,6 +152,50 @@ body {
 .sticky + #firstSect {
     padding-top: 60px;
 }
+/*  */
+
+
+#secondSect{
+    height: 763px;
+    background-image: url(https://static.wixstatic.com/media/7d8e8d_b34b450ce92348129cfa87a1a27a80f4~mv2.png/v1/fill/w_1583,h_763,al_c,q_90,usm_0.66_1.00_0.01/7d8e8d_b34b450ce92348129cfa87a1a27a80f4~mv2.webp);
+    /* display: flex; */
+
+}
+
+/* #secondSect > div{
+    flex-basis: 50%;
+    border: 1px solid red;
+    position: relative;
+
+} */
+
+
+
+#secondSect > button{
+    cursor: pointer;
+
+    position: relative;
+    top: 520px;
+    left: 100px;
+    padding: 12px 55px;
+    border-radius: 6px;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.5rem;
+    background-color: rgba(228, 201, 201,0.000003);
+
+
+}
+#secondSect > button:hover{
+
+    background-color: #67B521;
+}
+#thirdSect{
+ height: 593px ;
+ background-image: url(https://static.wixstatic.com/media/nsplsh_568ebea6d5f24fa98bd75e3074ebbd69~mv2.jpg/v1/fill/w_1583,h_593,al_c,q_85,usm_0.66_1.00_0.01/nsplsh_568ebea6d5f24fa98bd75e3074ebbd69~mv2.webp);
+ 
+}
+
 
 
 
