@@ -1,0 +1,166 @@
+.productPopUp {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: relative;
+}
+
+.cartPopUp {
+    height: 70vh;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    padding: 20px;
+    display: none;
+}
+
+.imageCont>img {
+    width: 100%;
+    height: 100%
+}
+
+.cartPopUp>#imageCont {
+    width: 50%;
+}
+
+.cartPopUp>#choiceCont {
+    width: 50%;
+    margin-left: 5%;
+    box-sizing: border-box;
+}
+
+#choiceCont>div>div {
+    /* margin: 30px; */
+}
+
+#cancel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+}
+
+.options {
+    display: flex;
+}
+
+.colorOptions {
+    height: 20px;
+    width: 20px;
+    border: 0.5px solid grey;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+#notToAdd {
+    width: 90%;
+    height: 25px;
+    font-size: 15px;
+    padding: 10px;
+}
+
+#quantity {
+    width: 15%;
+    height: 25px;
+    font-size: 15px;
+    padding: 10px;
+}
+
+#addToCart {
+    width: 80%;
+    background-color: #81C147;
+    text-align: center;
+    padding: 4%;
+    border-radius: 10px;
+    color: white;
+    font-family: sans-serif;
+    margin-top: 50px;
+}
+
+#cancelButton {
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+
+.purchase {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.purchase>div {
+    position: absolute;
+    right: 0;
+}
+
+.plans {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
+
+.myPlans {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    color: #81C147;
+}
+
+.myPlans>button {
+    border: none;
+    background: none;
+    font-size: 25px;
+    color: #81C147;
+}
+
+.myPlans>p {
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+.allItems {
+    height: 50vh;
+    width: 100%;
+    background-color: #E8E8E8;
+}
+
+.subtotal {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    background-color: #E8E8E8;
+}
+
+.subtotal>div {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+.vpurchase {
+    background-color: #E8E8E8;
+}
+
+#viewPurchase {
+    width: 80%;
+    border: 1.5px solid #81C147;
+    color: #81C147;
+    font-family: sans-serif;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    margin-left: 30px;
+}
