@@ -1,0 +1,145 @@
+body {
+    margin: 0%;
+}
+
+#navbar {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #67B521;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+#nav {
+    display: flex;
+    background-color: #67B521;
+    /* border: 1px solid red; */
+    flex-direction: row;
+    position: sticky;
+
+}
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+#navbar a:link {
+    color: white;
+}
+
+#navbar a:hover {
+    color: yellow;
+}
+
+
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#navbar li {
+    display: inline;
+    padding: 0 20px;
+}
+
+#menu {
+    min-width: 500px;
+}
+
+#logo,
+#menu,
+#signIn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px;
+    color: white;
+    font-size: 19px;
+}
+
+#loginBtn {
+    width: 200px;
+    height: 40px;
+    color: #67B521 !important;
+    background-color: rgba(240, 230, 230, 0.7);
+    border: 1px solid white;
+}
+
+#loginBtn>a {
+    color: #67B521;
+}
+
+#signIn>img {
+    cursor: pointer;
+    height: 60%;
+    margin-top: -15px;
+}
+
+#firstSect{
+    
+    height: 760px;
+    background-image: url(https://static.wixstatic.com/media/035244_881cbe4617f449cab844cb6a48b5fbeb~mv2_d_2475_2475_s_4_2.jpeg/v1/fill/w_1583,h_760,al_c,q_85,usm_0.66_1.00_0.01/035244_881cbe4617f449cab844cb6a48b5fbeb~mv2_d_2475_2475_s_4_2.webp);
+    background-color: #67B521;
+}
+#firstSect1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+    height: 760px;
+    background-color:rgba(240, 230, 230, 0.8);
+    display: flex;
+    /* flex-direction: row;  */
+}
+#firstSect11{
+    height: 760px;
+    background-image: url(https://static.wixstatic.com/media/11062b_eada5664b8fd45f291b84e3e5dcdd83a~mv2.jpeg/v1/fill/w_805,h_760,al_c,q_85,usm_0.66_1.00_0.01/11062b_eada5664b8fd45f291b84e3e5dcdd83a~mv2.webp) ;
+    background-repeat: no-repeat;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 5rem;
+    padding-top: 20px;
+    color: white;
+
+}
+#firstSect12{
+    font-size: 3rem;
+    padding-left: 60px;
+    padding-top: 120px;
+}
+.fSectItem{
+    flex-basis: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+     
+}
+#firstSect12 > button{
+    background-color: #67B521;
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 15px;
+    border: #67B521;
+    cursor: pointer;
+
+}
+
+#fsectFont1{
+    color: white;
+
+}
+#fsectFont2, #fsectFont3{
+    opacity: 0.7;
+}
+#fsectFont2 > p{
+    font-size: 1.8rem;
+    line-height: 7px;
+    opacity: 0.7;
+}
+.fsectFont12 {
+    font-size: 4.4rem;
+}
+
+
