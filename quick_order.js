@@ -116,6 +116,30 @@ let vnonFilter = {
 window.onload = () => {
   localStorage.setItem("data", JSON.stringify(itemObj));
   let data = JSON.parse(localStorage.getItem("data"));
+  document.getElementById("sort").addEventListener("change", changeData);
+  var sort = document.getElementById("sort").value;
+  if (sort == "nameAZ") {
+    data = data.sort((a, b) => {
+      if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+      else return 1;
+    });
+  } else if (sort == "nameZA") {
+    data = data.sort((a, b) => {
+      if (a.name.toLowerCase() < b.name.toLowerCase()) return 1;
+      else return -1;
+    });
+  } else if (sort == "HighTolow") {
+    data = data.sort((a, b) => {
+      if (a.price < b.price) return 1;
+      else return -1;
+    });
+  } else if (sort == "lowToHigh") {
+    data = data.sort((a, b) => {
+      if (a.price < b.price) return -1;
+      else return 1;
+    });
+  }
+  document.getElementById("products").innerHTML = null;
   data.forEach((el) => {
     addItems(el);
   });
@@ -160,6 +184,11 @@ let temp;
 function handleBreadClick() {
   event.stopPropagation();
 }
+
+function changeData() {
+  window.onload();
+}
+
 function listClick() {
   if (filterClickToggle) {
     if (this.id == "bread") {
