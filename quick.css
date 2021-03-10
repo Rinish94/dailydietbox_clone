@@ -1,51 +1,7 @@
 body {
-  margin: 0%;
   background-color: rgb(228, 228, 228);
   font-family: "Raleway", sans-serif;
 }
-
-/* NAVBAR */
-#navbar {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #67b521;
-  height: 90px;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
-  box-shadow: 0 5px 8px -5px #333;
-}
-
-#nav {
-  display: flex;
-  background-color: #67b521;
-  /* border: 1px solid red; */
-  flex-direction: row;
-  position: sticky;
-}
-
-#navbar a {
-  text-decoration: none;
-  color: white;
-}
-
-#navbar a:link {
-  color: white;
-}
-
-#navbar a:hover {
-  color: yellow;
-}
-
-#navbar ul {
-  list-style: none;
-  padding: 0;
-}
-
-#navbar li {
-  display: inline;
-  padding: 0 20px;
-}
-/* NAVBAR END */
 
 #quick-order {
   width: 980px;
@@ -174,58 +130,3 @@ hr {
   margin: 0%;
   text-align: center;
 }
-
-/* For Footer */
-#footer {
-  background-color: #e8e8e8;
-  background-image: url(https://static.parastorage.com/services/editor-elements/dist/media/ironpatern.6522082f.png);
-  display: flex;
-  justify-content: center;
-  box-shadow: 0 -5px 25px -5px rgba(88, 87, 87, 0.7);
-}
-
-.footItem ul {
-  list-style: none;
-  padding: 10px 110px 0px 0;
-  font-size: 0.87rem;
-  line-height: 18px;
-}
-
-.footItem span {
-  color: #67b521;
-}
-
-.footItem button {
-  padding: 0.6em 1.5em;
-  font-size: 1.0008rem;
-  color: #67b521;
-  border: 1px solid #67b521;
-  border-radius: 5px;
-  background: transparent;
-  cursor: pointer;
-}
-.footItem button:hover {
-  background-color: #67b521;
-  color: white;
-}
-
-.footIcons > li {
-  display: inline;
-}
-
-#iconSection ul {
-  padding-right: 0px;
-}
-
-#spGap {
-  margin: 0px 20px 0 10px;
-}
-
-#footer a {
-  text-decoration: none;
-  color: black;
-}
-#footer a:hover {
-  color: #67b521;
-}
-/*  */
