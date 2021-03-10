@@ -119,6 +119,9 @@ window.onload = () => {
   data.forEach((el) => {
     addItems(el);
   });
+  document
+    .getElementById("priceRange")
+    .addEventListener("click", handleBreadClick);
   let milkOpt = document.querySelectorAll("#milk > .outer-border");
   milkOpt.forEach((el) => {
     el.addEventListener("mouseenter", milkMouseEnter);
@@ -164,7 +167,6 @@ function listClick() {
     } else {
       this.querySelector(".list-body").style.display = "flex";
     }
-
     this.querySelector(".list-heading>i").setAttribute("class", "fa fa-minus");
   } else {
     this.querySelector(".list-body").style.display = "none";
@@ -234,7 +236,7 @@ function addItems(data) {
   let tag = document.createElement("div");
   let cardImg = document.createElement("div");
   let img = document.createElement("img");
-  let tag2 = document.createElement("p");
+  let tag2 = document.createElement("div");
   let cardText = document.createElement("div");
   let title = document.createElement("p");
   let cardTextDiivider = document.createElement("div");
@@ -248,9 +250,7 @@ function addItems(data) {
   tag2.setAttribute("class", "tag2");
   cardText.setAttribute("class", "card-text");
   cardTextDiivider.setAttribute("class", "card-text-divider");
-
   img.setAttribute("src", data.image);
-  tag2.innerHTML = "Quick View";
   title.innerHTML = data.name;
   price.append(rupee);
   checkPrice.innerHTML = data.price;
@@ -274,11 +274,15 @@ function addItems(data) {
   products.append(card);
 }
 function showTag2(event) {
-  event.target.querySelector(".card-img>p").style.display = "block";
+  event.target.querySelector(".tag2").innerHTML = "Quick View";
+  event.target.querySelector(".tag2").style.height = "auto";
+  event.target.querySelector(".tag2").style.padding = "16px 0px";
 }
 
 function hideTag2(event) {
-  event.target.querySelector(".card-img>p").style.display = "none";
+  event.target.querySelector(".tag2").style.padding = "0px";
+  event.target.querySelector(".tag2").style.height = "0px";
+  event.target.querySelector(".tag2").innerHTML = "";
 }
 
 function itemIdSend(event) {
