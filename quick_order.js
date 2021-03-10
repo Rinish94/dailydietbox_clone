@@ -163,13 +163,25 @@ function handleBreadClick() {
 function listClick() {
   if (filterClickToggle) {
     if (this.id == "bread") {
+      this.style.transition = "all 0.3s";
       this.querySelector(".list-body").style.display = "block";
+      this.style.height = "150px";
     } else {
-      this.querySelector(".list-body").style.display = "flex";
+      this.style.transition = "all 0.3s";
+      this.style.height = "95px";
     }
     this.querySelector(".list-heading>i").setAttribute("class", "fa fa-minus");
+    this.querySelectorAll(".list-body > *").forEach((el) => {
+      el.style.display = "block";
+      el.style.opacity = "1";
+    });
   } else {
-    this.querySelector(".list-body").style.display = "none";
+    this.querySelectorAll(".list-body > *").forEach((el) => {
+      el.style.display = "none";
+      el.style.opacity = "0";
+    });
+
+    this.style.height = "65px";
     this.querySelector(".list-heading>i").setAttribute("class", "fa fa-plus");
   }
   filterClickToggle = !filterClickToggle;
