@@ -9,6 +9,7 @@ body {
     display: flex;
     justify-content: center;
     z-index: 1;
+    box-shadow: 0 5px 8px -5px #333;
 }
 
 #nav {
@@ -158,17 +159,8 @@ body {
 #secondSect{
     height: 763px;
     background-image: url(https://static.wixstatic.com/media/7d8e8d_b34b450ce92348129cfa87a1a27a80f4~mv2.png/v1/fill/w_1583,h_763,al_c,q_90,usm_0.66_1.00_0.01/7d8e8d_b34b450ce92348129cfa87a1a27a80f4~mv2.webp);
-    /* display: flex; */
 
 }
-
-/* #secondSect > div{
-    flex-basis: 50%;
-    border: 1px solid red;
-    position: relative;
-
-} */
-
 
 
 #secondSect > button{
@@ -193,8 +185,69 @@ body {
 #thirdSect{
  height: 593px ;
  background-image: url(https://static.wixstatic.com/media/nsplsh_568ebea6d5f24fa98bd75e3074ebbd69~mv2.jpg/v1/fill/w_1583,h_593,al_c,q_85,usm_0.66_1.00_0.01/nsplsh_568ebea6d5f24fa98bd75e3074ebbd69~mv2.webp);
- 
 }
+
+/* For Footer */
+#footer{
+    background-color: #E8E8E8;
+    background-image: url(https://static.parastorage.com/services/editor-elements/dist/media/ironpatern.6522082f.png);
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 -5px 25px -5px rgba(88, 87, 87, 0.7);
+}
+
+.footItem ul {
+    list-style: none;
+    padding: 10px 110px 0px 0 ;
+    font-size: 0.87rem;
+    line-height: 18px;
+}
+
+.footItem span{
+    color: #67B521;
+}
+
+.footItem button{
+    padding: 0.6em 1.5em;
+    font-size: 1.0008rem;
+    color: #67B521;
+    border: 1px solid #67B521 ;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+}
+.footItem button:hover{
+    background-color: #67B521;
+    color: white;
+}
+
+.footIcons > li{
+    display: inline;
+}
+
+#iconSection ul{
+    padding-right: 0px ;
+}
+
+#spGap{
+    margin: 0px 20px 0 10px;
+}
+
+#footer a {
+    text-decoration: none;
+    color: black;
+}
+#footer a:hover {
+    color: #67B521;
+}
+/*  */
+
+
+
+
+
+
+
 
 
 
