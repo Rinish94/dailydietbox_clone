@@ -27,14 +27,14 @@ h2 {
 hr {
   width: 380px;
   height: 1px;
-  background-color: green;
-  border: 1px solid green;
+  background-color: rgb(129, 193, 71);
+  border: 1px solid rgb(129, 193, 71);
   margin-top: 25px;
 }
 .dot {
   height: 25px;
   width: 25px;
-  background-color: green;
+  background-color: rgb(129, 193, 71);
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -62,17 +62,68 @@ hr {
 .filter-list {
   flex-basis: 135%;
 }
-.list-item {
+.list-item > .list-heading {
   display: flex;
   justify-content: space-between;
+  font-size: 14px;
+  cursor: pointer;
+}
+.list-item {
   border-bottom: 1px solid gray;
+}
+.list-body {
+  display: flex;
+  padding-bottom: 25px;
+  display: none;
+}
+input[type="range"] {
+  width: 95%;
 }
 .border-top {
   border-top: 1px solid gray;
 }
-.list-item > * {
+.outer-border {
+  padding: 10x;
+  width: 22px;
+  height: 21px;
+  border-radius: 50%;
+  margin: 1px;
+}
+.circle {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  margin: 2px;
+  cursor: pointer;
+}
+.white {
+  background-color: white;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: rgb(129, 193, 71);
+}
+.gray {
+  background-color: gray;
+}
+.maroon {
+  background-color: maroon;
+}
+.red {
+  background-color: red;
+}
+.list-heading > * {
   margin: 0;
-  padding: 20px 0px 20px 0px;
+  padding: 25px 0px 25px 0px;
+}
+#bread > .list-body {
+  display: none;
+  font-size: 12px;
+  padding-bottom: 25px;
 }
 .items {
   display: flex;
@@ -99,10 +150,10 @@ hr {
   padding: 0;
 }
 .card-text {
-  color: green;
+  color: rgb(129, 193, 71);
 }
 .card-text-divider {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgb(129, 193, 71);
   width: 70%;
   margin-left: 10px;
 }
@@ -124,7 +175,7 @@ hr {
   position: absolute;
   top: 65%;
   color: white;
-  background-color: rgb(96, 216, 96);
+  background-color: rgb(129, 193, 71);
   width: 327px;
   padding: 10px;
   margin: 0%;

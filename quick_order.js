@@ -96,13 +96,138 @@ var itemObj = [
     tag: "Eggs",
   },
 ];
+let isMilkClick = true;
+let milkFilter = {
+  yellow: "Almond Milk",
+  green: "Soya Milk",
+  white: "Milk",
+};
+let seedFilter = {
+  gray: "Chia",
+  maroon: "Flax",
+  green: "Pumpkin",
+  yellow: "Sesame",
+};
+let vnonFilter = {
+  red: "Chicken",
+  green: "Veg",
+  yellow: "Eggs",
+};
 window.onload = () => {
   localStorage.setItem("data", JSON.stringify(itemObj));
   let data = JSON.parse(localStorage.getItem("data"));
   data.forEach((el) => {
     addItems(el);
   });
+  let milkOpt = document.querySelectorAll("#milk > .outer-border");
+  milkOpt.forEach((el) => {
+    el.addEventListener("mouseenter", milkMouseEnter);
+    el.addEventListener("mouseleave", milkMouseLeave);
+    el.addEventListener("click", handleClick);
+  });
+  let seedOption = document.querySelectorAll("#seed-option > .outer-border");
+  seedOption.forEach((el) => {
+    el.addEventListener("mouseenter", seedsMouseEnter);
+    el.addEventListener("mouseleave", seedsMouseLeave);
+    el.addEventListener("click", handleClick);
+  });
+  let seed = document.querySelectorAll("#seed > .outer-border");
+  seed.forEach((el) => {
+    el.addEventListener("mouseenter", seedsMouseEnter);
+    el.addEventListener("mouseleave", seedsMouseLeave);
+    el.addEventListener("click", handleClick);
+  });
+  let vegNonVeg = document.querySelectorAll("#veg-non-veg > .outer-border");
+  vegNonVeg.forEach((el) => {
+    el.addEventListener("mouseenter", vegNonVegMouseEnter);
+    el.addEventListener("mouseleave", vegNonVegMouseLeave);
+    el.addEventListener("click", handleClick);
+  });
+  let bread = document.querySelectorAll("#bread > .list-body");
+  bread.forEach((el) => {
+    el.addEventListener("click", handleBreadClick);
+  });
+  let lists = document.querySelectorAll(".list-item");
+  lists.forEach((el) => {
+    el.addEventListener("click", listClick);
+  });
 };
+let filterClickToggle = true;
+let temp;
+function handleBreadClick() {
+  event.stopPropagation();
+}
+function listClick() {
+  if (filterClickToggle) {
+    if (this.id == "bread") {
+      this.querySelector(".list-body").style.display = "block";
+    } else {
+      this.querySelector(".list-body").style.display = "flex";
+    }
+
+    this.querySelector(".list-heading>i").setAttribute("class", "fa fa-minus");
+  } else {
+    this.querySelector(".list-body").style.display = "none";
+    this.querySelector(".list-heading>i").setAttribute("class", "fa fa-plus");
+  }
+  filterClickToggle = !filterClickToggle;
+}
+function milkMouseLeave() {
+  let milkName = this.parentElement.parentElement.querySelector(
+    ".list-heading>p"
+  );
+  milkName.innerHTML = "Milk Options";
+}
+function milkMouseEnter() {
+  let [, color] = this.querySelector("div").getAttribute("class").split(" ");
+  let milkName = this.parentElement.parentElement.querySelector(
+    ".list-heading>p"
+  );
+  milkName.innerHTML = milkName.innerHTML + ": " + milkFilter[color];
+}
+function seedsMouseEnter() {
+  let [, color] = this.querySelector("div").getAttribute("class").split(" ");
+  let seedOptName = this.parentElement.parentElement.querySelector(
+    ".list-heading>p"
+  );
+  seedOptName.innerHTML = seedOptName.innerHTML + ": " + seedFilter[color];
+}
+function seedsMouseLeave() {
+  let seedName = this.parentElement.parentElement.querySelector(
+    ".list-heading>p"
+  );
+  if (this.parentElement.id == "seed") {
+    seedName.innerHTML = "Seeds";
+  } else {
+    seedName.innerHTML = "Seed Options";
+  }
+}
+
+function vegNonVegMouseLeave() {
+  let vnonName = this.parentElement.parentElement.querySelector(
+    ".list-heading>p"
+  );
+  vnonName.innerHTML = "Veg / Non-Veg";
+}
+
+function vegNonVegMouseEnter() {
+  let [, color] = this.querySelector("div").getAttribute("class").split(" ");
+  let vnonName = this.parentElement.parentElement.querySelector(
+    ".list-heading>p"
+  );
+  vnonName.innerHTML = vnonName.innerHTML + ": " + vnonFilter[color];
+}
+
+function handleClick(event) {
+  if (isMilkClick) {
+    this.style.border = "1px solid gray";
+  } else {
+    this.style.border = "none";
+  }
+  isMilkClick = !isMilkClick;
+  event.stopPropagation();
+}
+
 function addItems(data) {
   let products = document.getElementById("products");
   let card = document.createElement("div");

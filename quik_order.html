@@ -43,28 +43,110 @@
       <div class="items-container">
         <div class="filter-list">
           <div class="list-item border-top">
-            <p>Price</p>
-            <i class="fa fa-plus"></i>
+            <div class="list-heading">
+              <p>Price</p>
+              <i class="fa fa-plus"></i>
+            </div>
+            <div class="list-body">
+              <input type="range" />
+            </div>
           </div>
           <div class="list-item">
-            <p>Milk Options</p>
-            <i class="fa fa-plus"></i>
+            <div class="list-heading">
+              <p>Milk Options</p>
+              <i class="fa fa-plus"></i>
+            </div>
+            <div id="milk" class="list-body">
+              <div class="outer-border">
+                <div class="circle white"></div>
+              </div>
+
+              <div class="outer-border">
+                <div class="circle yellow"></div>
+              </div>
+
+              <div class="outer-border">
+                <div class="circle green"></div>
+              </div>
+            </div>
           </div>
           <div class="list-item">
-            <p>Seed Options</p>
-            <i class="fa fa-plus"></i>
+            <div class="list-heading">
+              <p>Seed Options</p>
+              <i class="fa fa-plus"></i>
+            </div>
+
+            <div id="seed-option" class="list-body">
+              <div class="outer-border">
+                <div class="circle gray"></div>
+              </div>
+
+              <div class="outer-border">
+                <div class="circle maroon"></div>
+              </div>
+
+              <div class="outer-border">
+                <div class="circle green"></div>
+              </div>
+              <div class="outer-border">
+                <div class="circle yellow"></div>
+              </div>
+            </div>
+          </div>
+          <div id="seeds" class="list-item">
+            <div class="list-heading">
+              <p>Seeds</p>
+              <i class="fa fa-plus"></i>
+            </div>
+            <div id="seed" class="list-body">
+              <div class="outer-border">
+                <div class="circle gray"></div>
+              </div>
+
+              <div class="outer-border">
+                <div class="circle maroon"></div>
+              </div>
+
+              <div class="outer-border">
+                <div class="circle green"></div>
+              </div>
+              <div class="outer-border">
+                <div class="circle yellow"></div>
+              </div>
+            </div>
           </div>
           <div class="list-item">
-            <p>Seeds</p>
-            <i class="fa fa-plus"></i>
+            <div class="list-heading">
+              <p>Veg / Non-Veg</p>
+              <i class="fa fa-plus"></i>
+            </div>
+
+            <div id="veg-non-veg" class="list-body">
+              <div class="outer-border">
+                <div class="circle red"></div>
+              </div>
+
+              <div class="outer-border">
+                <div class="circle yellow"></div>
+              </div>
+
+              <div class="outer-border">
+                <div class="circle green"></div>
+              </div>
+            </div>
           </div>
-          <div class="list-item">
-            <p>Veg / Non-Veg</p>
-            <i class="fa fa-plus"></i>
-          </div>
-          <div class="list-item">
-            <p>Bread Options</p>
-            <i class="fa fa-plus"></i>
+          <div id="bread" class="list-item">
+            <div class="list-heading">
+              <p>Bread Options</p>
+              <i class="fa fa-plus"></i>
+            </div>
+
+            <div class="list-body">
+              <div><input type="checkbox" /> Brown Bread</div>
+              <div><input type="checkbox" /> Milk Bread</div>
+              <div><input type="checkbox" /> Multigrane</div>
+              <div><input type="checkbox" /> Whole Wheat</div>
+            </div>
           </div>
         </div>
         <div id="products" class="items"></div>
