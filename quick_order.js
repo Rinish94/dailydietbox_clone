@@ -147,10 +147,6 @@ window.onload = () => {
   sortAndAddData();
 
   document.getElementById("sort").addEventListener("change", sortAndAddData);
-  document
-    .getElementById("priceRange")
-    .addEventListener("click", handleBreadClick);
-
   let milkOpt = document.querySelectorAll("#milk > .outer-border");
   milkOpt.forEach((el) => {
     el.addEventListener("mouseenter", milkMouseEnter);
@@ -346,6 +342,10 @@ function listClick() {
       this.style.transition = "all 0.3s";
       this.querySelector(".list-body").style.display = "block";
       this.style.height = "150px";
+    } else if (this.id == "price") {
+      this.style.transition = "all 0.3s";
+      this.querySelector(".list-body").style.display = "block";
+      this.style.height = "120px";
     } else {
       this.style.transition = "all 0.3s";
       this.style.height = "95px";
@@ -434,3 +434,40 @@ function hideTag2(event) {
 function itemIdSend(event) {
   window.location = `quik_order.html?product_id=${this.id}`;
 }
+
+let itemMax;
+let itemMin;
+$(function () {
+  data.forEach(function (el) {
+    if (itemMax == undefined || itemMax < el.price) {
+      itemMax = el.price;
+    }
+    if (itemMin == undefined || itemMin > el.price) {
+      itemMin = el.price;
+    }
+  });
+  $("#slider-range").slider({
+    range: true,
+    min: itemMin,
+    max: itemMax,
+    values: [itemMin, itemMax],
+    slide: function (event, ui) {
+      $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+      data = JSON.parse(localStorage.getItem("data"));
+      data = data.filter((el) => {
+        if (el.price >= ui.values[0] && el.price <= ui.values[1]) {
+          return true;
+        }
+        return false;
+      });
+      sortAndAddData();
+      event.stopPropagation();
+    },
+  });
+  $("#amount").val(
+    "$" +
+      $("#slider-range").slider("values", 0) +
+      " - $" +
+      $("#slider-range").slider("values", 1)
+  );
+});

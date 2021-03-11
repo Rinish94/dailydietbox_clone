@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="quick.css" />
@@ -42,13 +46,21 @@
       </div>
       <div class="items-container">
         <div class="filter-list">
-          <div class="list-item border-top">
+          <div id="price" class="list-item border-top">
             <div class="list-heading">
               <p>Price</p>
               <i class="fa fa-plus"></i>
             </div>
             <div class="list-body">
-              <input id="priceRange" type="range" />
+              <div id="slider-range"></div>
+              <p>
+                <input
+                  type="text"
+                  id="amount"
+                  readonly
+                  style="border: 0; color: black; font-weight: bold"
+                />
+              </p>
             </div>
           </div>
           <div class="list-item">
@@ -151,6 +163,9 @@
         <div id="products" class="items"></div>
       </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="quick_order.js"></script>
   </body>
 </html>

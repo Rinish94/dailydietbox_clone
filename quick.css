@@ -213,3 +213,38 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   font-size: 12px;
   transition: 0.2s;
 }
+#price > .list-body > p {
+  color: rgb(61, 60, 60);
+}
+
+.ui-widget.ui-widget-content {
+  height: 2px;
+  width: 90%;
+  margin: auto;
+  border: 0.5px solid lightgray;
+}
+.ui-widget-header {
+  background: rgb(61, 60, 60);
+}
+.ui-slider .ui-slider-handle {
+  border-radius: 50%;
+}
+.ui-slider-horizontal .ui-slider-handle {
+  top: -0.6em;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+  background: rgb(61, 60, 60);
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+.cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
