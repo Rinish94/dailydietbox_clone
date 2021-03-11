@@ -417,7 +417,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
     width: 15px;
     height: 15px;
     position: absolute;
-    top: 10px;
+    top: 50px;
     right: 20px;
     border: 0.5px solid grey;
     border-radius: 8px;

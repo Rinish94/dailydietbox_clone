@@ -385,12 +385,20 @@ milk_Options.forEach((ele) => {
             options.textContent = "Milk Option: " + " Soy Milk"
     })
 })
+var para = document.createElement('p')
 document.getElementById('addToCart').addEventListener('click', () => {
+    para.textContent = ""
+    if (options.innerText == "Milk Options:") {
+        para.style.color = "red"
+        para.style.fontSize = "12px"
+        para.textContent = "First select milk option."
+        document.querySelector('.milk-options').appendChild(para)
+
+    } else {
+        para.textContent = ""
+        options.innerText = "Milk Options:"
         document.querySelector('.purchase-modal').style.display = "flex"
         document.querySelector('.bg-modal').style.display = "none"
-
-        var quantity = document.getElementById('quantity').value
-        var notToAdd = document.getElementById('notToAdd').value
         var product = document.querySelector('.productprice').innerText
         var priceArr = product.split(" ")
         var productprice = Number(priceArr[1])
@@ -398,6 +406,20 @@ document.getElementById('addToCart').addEventListener('click', () => {
         var cartPrice = totalPrice.textContent
         var cart = cartPrice.split(" ")
         var totalCartPrice = Number(cart[1])
+
+        function subTotalPrice() {
+            var product = document.querySelector('.productprice').innerText
+            var priceArr = product.split(" ")
+            var productprice = Number(priceArr[1])
+            var totalPrice = document.querySelector('.totalPrice')
+            var cartPrice = totalPrice.textContent
+            var cart = cartPrice.split(" ")
+            var totalCartPrice = Number(cart[1])
+            return [totalCartPrice, productprice]
+        }
+        var quantity = document.getElementById('quantity').value
+        var notToAdd = document.getElementById('notToAdd').value
+        var [totalCartPrice, productprice] = subTotalPrice()
         totalPrice.textContent = "INR " + (totalCartPrice + (productprice * quantity))
 
         var Oidiv = document.createElement('div')
@@ -406,6 +428,12 @@ document.getElementById('addToCart').addEventListener('click', () => {
             canc.textContent = "+"
             canc.setAttribute('class', 'cancelCarttems')
             Oidiv.appendChild(canc)
+            canc.addEventListener('click', () => {
+                Oidiv.remove()
+                hDv.remove()
+                var [totalCartPrice, productprice] = subTotalPrice()
+                totalPrice.textContent = "INR " + (totalCartPrice - (productprice * quantity))
+            })
         })
         var Idiv1 = document.createElement('div')
         Idiv1.setAttribute('class', 'imgDiv')
@@ -453,12 +481,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
         p11.addEventListener('click', () => {
             if (quantity >= 1) {
                 p12.textContent = --quantity
-                var product = document.querySelector('.productprice').innerText
-                var priceArr = product.split(" ")
-                var productprice = Number(priceArr[1])
-                var cartPrice = totalPrice.textContent
-                var cart = cartPrice.split(" ")
-                var totalCartPrice = Number(cart[1])
+                var [totalCartPrice, productprice] = subTotalPrice()
                 totalPrice.textContent = "INR " + (totalCartPrice - productprice)
             }
 
@@ -466,22 +489,20 @@ document.getElementById('addToCart').addEventListener('click', () => {
         p13.addEventListener('click', () => {
             if (quantity >= 1) {
                 p12.textContent = ++quantity
-                var product = document.querySelector('.productprice').innerText
-                var priceArr = product.split(" ")
-                var productprice = Number(priceArr[1])
-                var cartPrice = totalPrice.textContent
-                var cart = cartPrice.split(" ")
-                var totalCartPrice = Number(cart[1])
+                var [totalCartPrice, productprice] = subTotalPrice()
                 totalPrice.textContent = "INR " + (totalCartPrice + productprice)
             }
 
         });
+    }
 
 
-    })
-    // tag2.addEventListener('click', () => {
-    //     document.querySelector('.bg-modal').style.display = "flex"
-    // });
+
+})
+
+// tag2.addEventListener('click', () => {
+//     document.querySelector('.bg-modal').style.display = "flex"
+// });
 document.querySelector('.close').addEventListener('click', () => {
     document.querySelector('.bg-modal').style.display = "none"
 });
