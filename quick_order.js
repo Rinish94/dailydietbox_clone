@@ -182,8 +182,11 @@ window.onload = () => {
 
   let lists = document.querySelectorAll(".list-item");
   lists.forEach((el) => {
-    el.addEventListener("click", listClick);
+    if (el.id != "clear") {
+      el.addEventListener("click", listClick);
+    }
   });
+  document.querySelector("#clear").addEventListener("click", resetFilter);
 };
 
 let filterClickToggle = true;
@@ -256,6 +259,7 @@ function handleMilkClick(event) {
   }
   isMilkClick = !isMilkClick;
   event.stopPropagation();
+  showClearFilter();
 }
 
 function seedsMouseEnter() {
@@ -296,6 +300,7 @@ function handleSeedOptClick(event) {
   }
   isSeedOptClick = !isSeedOptClick;
   event.stopPropagation();
+  showClearFilter();
 }
 
 function vegNonVegMouseLeave() {
@@ -333,6 +338,7 @@ function handleVNvegClick(event) {
     sortAndAddData();
   }
   isVNvegClick = !isVNvegClick;
+  showClearFilter();
   event.stopPropagation();
 }
 
@@ -435,6 +441,13 @@ function itemIdSend(event) {
   window.location = `quik_order.html?product_id=${this.id}`;
 }
 
+function resetFilter() {
+  location.reload();
+}
+
+function showClearFilter() {
+  document.getElementById("clear").style.display = "block";
+}
 let itemMax;
 let itemMin;
 $(function () {

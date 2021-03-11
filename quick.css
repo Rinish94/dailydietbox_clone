@@ -248,3 +248,8 @@ html .ui-button.ui-state-disabled:active {
   display: flex;
   justify-content: space-between;
 }
+
+#clear {
+  display: none;
+  border: none;
+}
