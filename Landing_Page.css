@@ -1,24 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('http://db.onlinewebfonts.com/c/16efa2896f117dae2debeb23ab4715dd?family=DidoteTextW01-Italic');
+@import url('http://db.onlinewebfonts.com/c/c017c9efb81f32559dee68fa54edbde4?family=ReklameScriptW00-Medium');
+@import url('http://db.onlinewebfonts.com/c/562fa31bba08b3f71cb71257ddb880d5?family=Verdana');
+@import url('http://db.onlinewebfonts.com/c/952bab25f6798d6bb1937d67e9bee4dd?family=Sans');
+@import url('http://db.onlinewebfonts.com/c/592d7d249c34da18d3a6fea41e031cfe?family=BreeW01-ThinOblique');
 body {
-    margin: 0%;
+    margin: 0;
 }
 
 #navbar {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     background-color: #67B521;
     height: 90px;
     display: flex;
     justify-content: center;
-    z-index: 1;
+    z-index: 2;
     box-shadow: 0 5px 8px -5px #333;
 }
 
 #nav {
     display: flex;
     background-color: #67B521;
-    /* border: 1px solid red; */
     flex-direction: row;
     position: sticky;
-
 }
 
 #navbar a {
@@ -26,15 +31,9 @@ body {
     color: white;
 }
 
-#navbar a:link {
-    color: white;
-}
-
 #navbar a:hover {
     color: yellow;
 }
-
-
 
 #navbar ul {
     list-style: none;
@@ -50,9 +49,7 @@ body {
     min-width: 500px;
 }
 
-#logo,
-#menu,
-#signIn {
+#logo, #menu, #signIn {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -62,110 +59,137 @@ body {
 }
 
 #loginBtn {
-    width: 200px;
-    height: 40px;
-    color: #67B521 !important;
-    background-color: rgba(240, 230, 230, 0.7);
+    width: 165px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid white;
 }
 
 #loginBtn>a {
     color: #67B521;
+    transition: 0.6s ease;
+    font-size: 1.2em;
+    font-family: 'Open Sans', Arial, sans-serif;
 }
 
-#signIn>img {
-    cursor: pointer;
-    height: 60%;
-    margin-top: -15px;
+#loginBtn>a:hover {
+    color: rgba(255, 255, 0, 0.651) !important;
 }
 
-#firstSect{
-    
-    /* height: 760px; */
+#signIn svg {
+    margin-top: -8px;
+    margin-left: 10px;
+}
+
+/* FirstSection starts here */
+
+#firstSect {
     background-image: url(https://static.wixstatic.com/media/035244_881cbe4617f449cab844cb6a48b5fbeb~mv2_d_2475_2475_s_4_2.jpeg/v1/fill/w_1583,h_760,al_c,q_85,usm_0.66_1.00_0.01/035244_881cbe4617f449cab844cb6a48b5fbeb~mv2_d_2475_2475_s_4_2.webp);
     background-color: #67B521;
     background-size: cover;
-
 }
-#firstSect1{
+
+#firstSect1 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     height: 760px;
-    background-color:rgba(240, 230, 230, 0.8);
+    background-color: rgba(240, 230, 230, 0.8);
     display: flex;
 }
-#firstSect11{
+
+#firstSect11 {
     height: 760px;
-    background-image: url(https://static.wixstatic.com/media/11062b_eada5664b8fd45f291b84e3e5dcdd83a~mv2.jpeg/v1/fill/w_805,h_760,al_c,q_85,usm_0.66_1.00_0.01/11062b_eada5664b8fd45f291b84e3e5dcdd83a~mv2.webp) ;
+    background-image: url(https://static.wixstatic.com/media/11062b_eada5664b8fd45f291b84e3e5dcdd83a~mv2.jpeg/v1/fill/w_805,h_760,al_c,q_85,usm_0.66_1.00_0.01/11062b_eada5664b8fd45f291b84e3e5dcdd83a~mv2.webp);
     background-repeat: no-repeat;
     font-size: 3rem;
     text-align: center;
     line-height: 5rem;
     padding-top: 35px;
     color: white;
-
 }
-#firstSect12{
+
+#firstSect12 {
+    min-width: 380px;
     font-size: 3rem;
     padding-left: 60px;
     padding-top: 120px;
 }
-.fSectItem{
+
+.fSectItem {
     flex-basis: 50%;
     flex-grow: 1;
     flex-shrink: 1;
-     
 }
-#firstSect12 > button{
+
+#firstSect12>button {
+    border: transparent;
     background-color: #67B521;
+    transition: 0.6s ease;
     font-size: 1.05rem;
     font-weight: bold;
     color: white;
     padding: 15px 40px;
-    border-radius: 15px;
+    border-radius: 10px;
     border: #67B521;
     cursor: pointer;
-
+    outline: none;
 }
 
-#fsectFont1{
+#firstSect12>button:hover {
+    background-color: white;
+    color: #67B521;
+}
+
+#fsectFont1 {
     color: white;
-
+    line-height: 54px;
 }
-#fsectFont2, #fsectFont3{
+
+#fsectFont2, #fsectFont3 {
     color: rgba(0, 0, 0, 0.7);
 }
-#fsectFont2 > p{
+
+#fsectFont2>p {
+    font-family: "DidoteTextW01-Italic";
     font-size: 1.8rem;
     line-height: 7px;
 }
+
+#fsectFont3 {
+    font-size: 0.88em;
+    font-weight: bold;
+}
+
 .fsectFont12 {
     font-size: 4.4rem;
 }
 
-/* For sticky Navbar */
+/* sticky Navbar code starts here */
+
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
 }
 
-.sticky + #firstSect {
-    padding-top: 60px;
+.sticky+#firstSect {
+    padding-top: 80px;
 }
-/*  */
+/*Sticky navbar code ends here  */
 
+/* FirstSection Ends here */
 
-#secondSect{
+/* SecondSection Starts here */
+#secondSect {
     height: 763px;
-    background-image: url(https://static.wixstatic.com/media/7d8e8d_b34b450ce92348129cfa87a1a27a80f4~mv2.png/v1/fill/w_1583,h_763,al_c,q_90,usm_0.66_1.00_0.01/7d8e8d_b34b450ce92348129cfa87a1a27a80f4~mv2.webp);
-
+    background-image: url('https://static.wixstatic.com/media/7d8e8d_b34b450ce92348129cfa87a1a27a80f4~mv2.png/v1/fill/w_1583,h_763,al_c,q_90,usm_0.66_1.00_0.01/7d8e8d_b34b450ce92348129cfa87a1a27a80f4~mv2.webp');
+    background-position: center;
 }
 
-
-#secondSect > button{
+#secondSect>button {
     cursor: pointer;
-
+    outline: none;
+    transition: 0.6s ease;
     position: relative;
     top: 520px;
     left: 100px;
@@ -174,23 +198,66 @@ body {
     border: 1px solid white;
     color: white;
     font-size: 1.5rem;
-    background-color: rgba(228, 201, 201,0.000003);
-
-
+    background-color: rgba(228, 201, 201, 0.000003);
 }
-#secondSect > button:hover{
 
+#secondSect>button:hover {
     background-color: #67B521;
+    border: 1px solid #67B521;
 }
-#thirdSect{
- height: 593px ;
- background-image: url(https://static.wixstatic.com/media/nsplsh_568ebea6d5f24fa98bd75e3074ebbd69~mv2.jpg/v1/fill/w_1583,h_593,al_c,q_85,usm_0.66_1.00_0.01/nsplsh_568ebea6d5f24fa98bd75e3074ebbd69~mv2.webp);
+/* SecondSection Ends here */
+
+/* ThirdSection Starts here */
+#thirdSect {
+    font-family: 'Open Sans', Arial, sans-serif;
+    height: 593px;
+    background-image: url('https://static.wixstatic.com/media/nsplsh_568ebea6d5f24fa98bd75e3074ebbd69~mv2.jpg/v1/fill/w_1583,h_593,al_c,q_85,usm_0.66_1.00_0.01/nsplsh_568ebea6d5f24fa98bd75e3074ebbd69~mv2.webp');
 }
+
+#thirdSect>h1 {
+    font-family: "DidoteTextW01-Italic";
+    font-weight: normal;
+    margin: auto;
+    padding: 0.8em 0;
+    width: fit-content;
+    font-size: 3.5em;
+    color: #ff6161;
+}
+
+#thirdSect>div {
+    display: flex;
+    justify-content: center;
+}
+
+#thirdSect>div>div {
+    text-align: center;
+    color: #286355;
+    margin: 10px;
+    padding: 75px 55px;
+    background-color: rgba(252, 250, 250, 0.5);
+}
+
+#thirdSect p {
+    margin: 0;
+}
+
+.nums3 {
+    font-family: "DidoteTextW01-Italic";
+    font-size: 6em;
+}
+
+#thirdSect>div>div>div {
+    border-top: 2px solid #286355;
+    width: 40%;
+    margin: auto
+}
+/* ThirdSection Ends here */
 
 /* For Footer */
-#footer{
+#footer {
+    font-family: 'Open Sans', Arial, sans-serif;
     background-color: #E8E8E8;
-    background-image: url(https://static.parastorage.com/services/editor-elements/dist/media/ironpatern.6522082f.png);
+    background-image: url('https://static.parastorage.com/services/editor-elements/dist/media/ironpatern.6522082f.png');
     display: flex;
     justify-content: center;
     box-shadow: 0 -5px 25px -5px rgba(88, 87, 87, 0.7);
@@ -198,38 +265,41 @@ body {
 
 .footItem ul {
     list-style: none;
-    padding: 10px 110px 0px 0 ;
-    font-size: 0.87rem;
+    padding: 10px 110px 0px 0;
+    font-size: 0.83rem;
     line-height: 18px;
 }
 
-.footItem span{
+.footItem span {
     color: #67B521;
 }
 
-.footItem button{
+.footItem button {
+    outline: none;
+    transition: 0.6s ease;
     padding: 0.6em 1.5em;
     font-size: 1.0008rem;
     color: #67B521;
-    border: 1px solid #67B521 ;
+    border: 1px solid #67B521;
     border-radius: 5px;
     background: transparent;
     cursor: pointer;
 }
-.footItem button:hover{
+
+.footItem button:hover {
     background-color: #67B521;
     color: white;
 }
 
-.footIcons > li{
+.footIcons>li {
     display: inline;
 }
 
-#iconSection ul{
-    padding-right: 0px ;
+#iconSection ul {
+    padding-right: 0px;
 }
 
-#spGap{
+#spGap {
     margin: 0px 20px 0 10px;
 }
 
@@ -237,19 +307,408 @@ body {
     text-decoration: none;
     color: black;
 }
+
 #footer a:hover {
     color: #67B521;
 }
-/*  */
+/* Footer ends here  */
 
+/* SixthSection starts here */
+#sixthSect {
+    background-color: rgb(255 130 130);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
+#sixthSect>h1 {
+    font-family: "ReklameScriptW00-Medium";
+    font-weight: normal;
+    font-style: normal;
+    margin: auto;
+    padding: 0.4em 0;
+    width: fit-content;
+    font-size: 3em;
+    color: white;
+    letter-spacing: 4px
+}
 
+#sixthSect>h3 {
+    font-family: "Verdana";
+    font-weight: lighter;
+    margin: auto;
+    margin-top: -0.5em;
+    margin-bottom: 0.2em;
+    width: fit-content;
+    font-size: 1.7em;
+    color: white;
+    padding-bottom: 1em;
+}
 
+#sixthSect>div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
 
+#mealContain {
+    border: 1px solid black;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #333;
+}
 
+.mealItem1 {
+    padding: 15px 10px;
+    line-height: 5px;
+}
 
+.mealItem1 a {
+    text-decoration: none;
+    color: rgb(94, 91, 91);
+}
 
+/* .mealItem1 {box-sizing: border-box;} */
 
+#sixthSect img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
+.container {
+    position: relative;
+}
 
+#overlay1, #overlay2, #overlay3, #overlay4 {
+    position: absolute;
+    top: 163px;
+    transition: .5s ease;
+    opacity: 0;
+    text-align: center;
+    width: 207px;
+    padding: 20px 0 !important;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.692);
+    color: black;
+}
 
+.container:hover #overlay1, .container:hover #overlay2, .container:hover #overlay3, .container:hover #overlay4 {
+    opacity: 1;
+}
+
+#mealContain svg {
+    cursor: pointer;
+    filter: drop-shadow(0 0 1px #2c2c2c);
+    fill: white;
+    stroke: #999;
+}
+
+.mealItem1:nth-of-type(2) {
+    position: relative;
+}
+
+.mealItem1:nth-of-type(2) div, .mealItem1:nth-of-type(4) div {
+    background-color: rgb(255, 115, 0);
+    color: white;
+    padding: 10px !important;
+    position: absolute;
+    z-index: 1;
+}
+/* SixthSection Ends here */
+
+/* SeventhSection Starts here */
+#seventhSect {
+    background-color: rgb(247 245 225);
+    margin: 0;
+    padding: 0;
+}
+
+#seventhSect>h1 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 8px;
+    margin: auto;
+    padding: 0.5em 0;
+    width: fit-content;
+    font-size: 3em;
+}
+
+#quotes {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.person {
+    width: 310px;
+    height: 480px;
+    margin: 12px;
+    background-size: cover;
+}
+
+#quotes>div:nth-of-type(1) {
+    background-image: url(https://static.wixstatic.com/media/83524445ca90408594501cacb2567307.jpg/v1/fill/w_316,h_480,al_c,q_80,usm_0.66_1.00_0.01/83524445ca90408594501cacb2567307.webp);
+}
+
+#quotes>div:nth-of-type(2) {
+    background-image: url(https://static.wixstatic.com/media/7d8e8d_904020b6737442f4bccee84c67bed958~mv2.jpg/v1/fill/w_307,h_480,al_r,q_80,usm_0.66_1.00_0.01/7d8e8d_904020b6737442f4bccee84c67bed958~mv2.webp);
+}
+
+#quotes>div:nth-of-type(3) {
+    background-image: url(https://static.wixstatic.com/media/7d8e8d_6242754fdefe4ee58bb733752190d50e~mv2.jpg/v1/fill/w_307,h_480,al_l,lg_1,q_80/7d8e8d_6242754fdefe4ee58bb733752190d50e~mv2.webp);
+}
+
+.person>div {
+    min-width: 310px;
+    padding: 0;
+    margin-top: 0;
+    height: 480px;
+    background-color: rgba(48, 63, 77, 0.678);
+}
+
+#seventhSect svg {
+    fill: #FFC65C;
+    width: 35px;
+    height: 35px;
+    transform: rotate(180deg);
+    height: 35px;
+    width: 35px;
+}
+
+#seventhSect p {
+    margin: 0;
+    text-align: center;
+    color: white;
+    line-height: 1.5em;
+}
+
+.spFont {
+    font-family: "BreeW01-ThinOblique"
+}
+
+.pName, .pTitle {
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #FFC65C !important;
+}
+
+.pName {
+    font-size: 1.8em
+}
+
+.pAlign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pAlign1 {
+    padding: 70px 50px;
+}
+
+#pAlign2 {
+    padding: 70px 25px;
+}
+
+#pAlign3 {
+    padding: 70px 40px;
+}
+/* SeventhSection Ends here */
+
+/* EighthSection Starts here */
+#eigthSect {
+    background-color: white;
+}
+
+#eigthSect>div {
+    min-width: 800px;
+    background-color: rgb(78, 194, 179);
+    margin: 18px 0px;
+    font-size: 2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px;
+}
+
+#eigthSect button {
+    outline: none;
+    transition: 0.6s ease;
+    color: #67B521;
+    background-color: white;
+    padding: 10px 25px;
+    font-size: 0.5em;
+    margin-left: 100px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: white;
+    min-width: 138px;
+}
+
+#eigthSect button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #67B521;
+}
+
+#eigthSect span {
+    font-family: 'Open Sans', Arial, sans-serif;
+    min-width: 620px
+}
+/* EighthSection Ends here */
+
+/* FourthSection Starts here */
+#fourthSect>h1 {
+    font-family: "ReklameScriptW00-Medium";
+    font-weight: normal;
+    color: rgb(88, 87, 87);
+    margin: auto;
+    padding: 0.4em 0;
+    width: fit-content;
+    font-size: 3em;
+    letter-spacing: 3px
+}
+
+#fourthSect>h2 {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: normal;
+    color: rgb(88, 87, 87);
+    margin: auto;
+    padding: 0.4em 0;
+    width: fit-content;
+    font-size: 2em;
+}
+
+#fourthSect {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+#fourthSect>button {
+    outline: none;
+    transition: 0.6s ease;
+    margin: auto;
+    font-size: 1.2em;
+    background-color: #67B521;
+    border: transparent;
+    border-radius: 5px;
+    padding: 10px 45px;
+    color: white;
+}
+
+#fourthSect>button:hover {
+    background-color: white;
+    border: transparent;
+    color: #67B521;
+    cursor: pointer;
+}
+
+#fourthSect>div {
+    display: flex;
+    justify-content: center;
+}
+
+#fourthSect>div>div {
+    text-align: center;
+    margin: 16px;
+}
+
+#fourthSect img {
+    padding-bottom: 30px;
+}
+
+#fourthSect>div>div:nth-of-type(2) {
+    padding-top: 95px;
+}
+
+#fourthSect>div>div:nth-of-type(1) {
+    padding-top: 20px;
+}
+
+#fourthSect p {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 3px;
+}
+/* FourthSection Ends here */
+
+/* FifthSection Starts here */
+#fifthSect {
+    background-image: url('https://static.wixstatic.com/media/nsplsh_706845616571653535354d~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_1583,h_719,al_c,q_85,usm_0.66_1.00_0.01/nsplsh_706845616571653535354d~mv2_d_5184_3456_s_4_2.webp');
+    display: flex;
+    justify-content: center;
+    line-height: 45px;
+    color: white;
+    text-align: center;
+}
+
+#fifthSect h1 {
+    font-family: "ReklameScriptW00-Medium";
+    letter-spacing: 4px;
+    font-size: 3.1em;
+    font-weight: lighter;
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+
+#fifthSect>div {
+    width: 50%;
+}
+
+#fifthSect>div:nth-of-type(2)>div {
+    background-color: #51a01fbe;
+    width: fit-content;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    padding: 15px 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #333;
+    min-width: 320px;
+}
+
+#fifthSect ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1em;
+    display: inline;
+    text-align: left;
+}
+
+#fifthSect span {
+    color: yellow;
+    font-size: 1.17em;
+}
+
+#fifthSect li {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 0.85em;
+    background-image: url(./images/rowSeparate.png);
+}
+
+#fifthSect button {
+    outline: none;
+    transition: 0.6s ease;
+    text-align: center;
+    border: transparent;
+    color: #67B521;
+    background-color: white;
+    border: 1px solid white;
+    font-size: 1em;
+    padding: 10px 40px;
+    border-radius: 7px;
+    margin-top: 35px;
+}
+
+#fifthSect button:hover {
+    cursor: pointer;
+    border: 1px solid white;
+    color: white;
+    background-color: #BADA55;
+}
+/* FifthSection Ends here */
