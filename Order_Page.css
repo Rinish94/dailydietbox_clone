@@ -262,7 +262,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* display: none; */
+    display: none;
 }
 
 .modal-content {
@@ -381,8 +381,9 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
 }
 
 .purchase-close {
-    font-size: 40px;
+    font-size: 30px;
     margin-left: 5px;
+    margin-top: 20px;
     cursor: pointer;
 }
 
@@ -395,6 +396,65 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
     height: 55vh;
     width: 100%;
     background-color: #E8E8E8;
+}
+
+.cartItems {
+    max-height: 100%;
+    width: 90%;
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.cartItems>div {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    position: relative;
+}
+
+.cancelCarttems {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    border: 0.5px solid grey;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cartItems>div>.imgDiv {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.imgDiv>img {
+    width: 100%;
+    height: 100%;
+}
+
+.prdDeatils {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.prdQuantity {
+    height: 20px;
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    padding: 3px;
 }
 
 .subtotal {

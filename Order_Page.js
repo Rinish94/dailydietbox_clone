@@ -386,11 +386,98 @@ milk_Options.forEach((ele) => {
     })
 })
 document.getElementById('addToCart').addEventListener('click', () => {
+        document.querySelector('.purchase-modal').style.display = "flex"
+        document.querySelector('.bg-modal').style.display = "none"
+
         var quantity = document.getElementById('quantity').value
         var notToAdd = document.getElementById('notToAdd').value
-        var productprice = document.querySelector('.productprice').textContent
-        productprice = productprice.split(" ")
-        productprice = Number(productprice[1])
+        var product = document.querySelector('.productprice').innerText
+        var priceArr = product.split(" ")
+        var productprice = Number(priceArr[1])
+        var totalPrice = document.querySelector('.totalPrice')
+        var cartPrice = totalPrice.textContent
+        var cart = cartPrice.split(" ")
+        var totalCartPrice = Number(cart[1])
+        totalPrice.textContent = "INR " + (totalCartPrice + (productprice * quantity))
+
+        var Oidiv = document.createElement('div')
+        Oidiv.addEventListener('mouseenter', () => {
+            var canc = document.createElement('div')
+            canc.textContent = "+"
+            canc.setAttribute('class', 'cancelCarttems')
+            Oidiv.appendChild(canc)
+        })
+        var Idiv1 = document.createElement('div')
+        Idiv1.setAttribute('class', 'imgDiv')
+        var Idiv1Image = document.createElement('img')
+        var divImage = document.querySelector('.prdImage').getAttribute('src')
+        Idiv1Image.setAttribute("src", divImage)
+        Idiv1.appendChild(Idiv1Image)
+        Oidiv.appendChild(Idiv1)
+
+        var Idiv2 = document.createElement('div')
+        Idiv2.setAttribute('class', 'prdDeatils')
+        Oidiv.appendChild(Idiv2)
+
+        var p1 = document.createElement('div')
+        p1.innerText = document.querySelector('.productName').innerText
+        Idiv2.appendChild(p1)
+        var p2 = document.createElement('div')
+        p2.innerText = document.querySelector('.productprice').innerText
+        Idiv2.appendChild(p2)
+        var divIn = document.createElement('div')
+        divIn.setAttribute('class', 'prdQuantity')
+        Idiv2.appendChild(divIn)
+        var p11 = document.createElement('div')
+        p11.textContent = "-"
+        p11.style.cursor = "pointer"
+
+
+        divIn.appendChild(p11)
+        var p12 = document.createElement('div')
+        p12.setAttribute('class', 'prdNumber')
+        p12.textContent = quantity
+
+        divIn.appendChild(p12)
+        var p13 = document.createElement('div')
+        p13.textContent = "+"
+        divIn.appendChild(p13)
+        p13.style.cursor = "pointer"
+
+        document.querySelector('.cartItems').append(Oidiv)
+        var hDv = document.createElement('div')
+        hDv.style.background = "grey"
+        hDv.style.height = "1px"
+        hDv.style.marginTop = "30px"
+        document.querySelector('.cartItems').appendChild(hDv)
+        p11.addEventListener('click', () => {
+            if (quantity >= 1) {
+                p12.textContent = --quantity
+                var product = document.querySelector('.productprice').innerText
+                var priceArr = product.split(" ")
+                var productprice = Number(priceArr[1])
+                var cartPrice = totalPrice.textContent
+                var cart = cartPrice.split(" ")
+                var totalCartPrice = Number(cart[1])
+                totalPrice.textContent = "INR " + (totalCartPrice - productprice)
+            }
+
+        });
+        p13.addEventListener('click', () => {
+            if (quantity >= 1) {
+                p12.textContent = ++quantity
+                var product = document.querySelector('.productprice').innerText
+                var priceArr = product.split(" ")
+                var productprice = Number(priceArr[1])
+                var cartPrice = totalPrice.textContent
+                var cart = cartPrice.split(" ")
+                var totalCartPrice = Number(cart[1])
+                totalPrice.textContent = "INR " + (totalCartPrice + productprice)
+            }
+
+        });
+
+
     })
     // tag2.addEventListener('click', () => {
     //     document.querySelector('.bg-modal').style.display = "flex"
@@ -401,11 +488,6 @@ document.querySelector('.close').addEventListener('click', () => {
 
 //purchase Modal
 
-
-document.getElementById('addToCart').addEventListener('click', () => {
-    document.querySelector('.purchase-modal').style.display = "flex"
-    document.querySelector('.bg-modal').style.display = "none"
-})
 document.querySelector('.purchase-close').addEventListener('click', () => {
     document.querySelector('.purchase-modal').style.display = "none"
 })
