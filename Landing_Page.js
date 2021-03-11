@@ -79,7 +79,7 @@ del.addEventListener('click', () => {
         localStorage.setItem('itemCount', items)
     }
 })
-//cart Item counter starts here
+//cart Item counter ends here
 
 
 
