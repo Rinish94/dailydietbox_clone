@@ -1,46 +1,304 @@
-.productPopUp {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    position: relative;
+body {
+    background-color: rgb(228, 228, 228);
+    font-family: "Raleway", sans-serif;
 }
 
-.cartPopUp {
-    height: 70vh;
-    width: 70%;
+#quick-order {
+    width: 980px;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+.heading {
+    width: 1020px;
+    background-color: white;
     margin: auto;
     display: flex;
-    padding: 20px;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+.heading>h2 {
+    margin: 12px;
+}
+
+hr {
+    width: 380px;
+    height: 1px;
+    background-color: rgb(129, 193, 71);
+    border: 1px solid rgb(129, 193, 71);
+    margin-top: 25px;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: rgb(129, 193, 71);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: 14px;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.option>#sort {
+    width: 200px;
+    text-align: left;
+    background-color: white;
+    border: 1px solid gray;
+}
+
+.option>h2 {
+    margin: 0;
+    margin-top: 8px;
+}
+
+.items-container {
+    display: flex;
+}
+
+body {
+    background-color: rgb(228, 228, 228);
+    font-family: "Raleway", sans-serif;
+}
+
+.filter-list {
+    flex-basis: 135%;
+}
+
+.list-item>.list-heading {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.list-item {
+    border-bottom: 1px solid gray;
+    height: 66px;
+    overflow: hidden;
+}
+
+.list-body>* {
+    display: none;
+    opacity: 0;
+}
+
+.list-body {
+    display: flex;
+    transition: 0.2s;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 800px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: black;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 1);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -6px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: black;
+}
+
+.border-top {
+    border-top: 1px solid gray;
+}
+
+.outer-border {
+    padding: 10x;
+    width: 22px;
+    height: 21px;
+    border-radius: 50%;
+    margin: 1px;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.white {
+    background-color: white;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: rgb(129, 193, 71);
+}
+
+.gray {
+    background-color: gray;
+}
+
+.maroon {
+    background-color: maroon;
+}
+
+.red {
+    background-color: red;
+}
+
+.list-heading>* {
+    margin: 0;
+    padding: 25px 0px 20px 0px;
+}
+
+#bread {
+    font-size: 12px;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: 347px;
+    height: 350px;
+    margin: 20px 0px 8px 28px;
+    position: relative;
+    padding: 0;
+    cursor: pointer;
+}
+
+.card:hover {
+    border: 1px solid black;
+    height: 347px;
+}
+
+.card-img>p {
     display: none;
 }
 
-.imageCont>img {
+.card-img>img {
     width: 100%;
-    height: 100%
+    margin: 0;
+}
+
+.card-img {
+    padding: 0;
+}
+
+.card-text {
+    color: rgb(129, 193, 71);
+}
+
+.card-text-divider {
+    border-bottom: 1px solid rgb(129, 193, 71);
+    width: 70%;
+    margin-left: 10px;
+}
+
+.card-text>p:nth-child(1) {
+    font-size: 18px;
+}
+
+.card-text>p {
+    margin: 10px;
+}
+
+.tag {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: orange;
+    padding: 5px;
+    color: white;
+}
+
+.tag2 {
+    position: absolute;
+    bottom: 24.7%;
+    color: white;
+    background-color: rgb(129, 193, 71);
+    width: 100%;
+    margin: 0%;
+    text-align: center;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+
+/* Modal Popup  */
+
+.bg-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: none; */
+}
+
+.modal-content {
+    width: 900px;
+    height: 600px;
+    background-color: white;
+    position: relative;
+    border-radius: 5px;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    font-size: 40px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.cartPopUp {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
 }
 
 .cartPopUp>#imageCont {
-    width: 50%;
+    width: 45%;
 }
 
 .cartPopUp>#choiceCont {
-    width: 50%;
-    margin-left: 5%;
-    box-sizing: border-box;
+    width: 45%;
 }
 
-#choiceCont>div>div {
-    /* margin: 30px; */
-}
-
-#cancel {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
+#imageCont>img {
+    width: 100%;
+    height: 100%
 }
 
 .options {
@@ -57,44 +315,54 @@
 
 #notToAdd {
     width: 90%;
-    height: 25px;
+    height: 20px;
     font-size: 15px;
     padding: 10px;
 }
 
 #quantity {
     width: 15%;
-    height: 25px;
+    height: 20px;
     font-size: 15px;
     padding: 10px;
 }
 
 #addToCart {
-    width: 80%;
+    width: 90%;
     background-color: #81C147;
     text-align: center;
     padding: 4%;
     border-radius: 10px;
     color: white;
     font-family: sans-serif;
-    margin-top: 50px;
+    margin-top: 80px;
+    cursor: pointer;
 }
 
-#cancelButton {
-    background: none;
-    border: none;
-    font-size: 20px;
-}
 
-.purchase {
-    position: relative;
+/* Modal Popup till here */
+
+
+/* Purchase modal Popup */
+
+.purchase-modal {
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    display: none;
 }
 
-.purchase>div {
-    position: absolute;
-    right: 0;
+.purchase-content {
+    width: 25%;
+    height: 100vh;
+    background-color: white;
+    position: relative;
+    left: 75%;
 }
 
 .plans {
@@ -109,13 +377,13 @@
     display: flex;
     justify-content: space-between;
     color: #81C147;
+    position: relative;
 }
 
-.myPlans>button {
-    border: none;
-    background: none;
-    font-size: 25px;
-    color: #81C147;
+.purchase-close {
+    font-size: 40px;
+    margin-left: 5px;
+    cursor: pointer;
 }
 
 .myPlans>p {
@@ -124,7 +392,7 @@
 }
 
 .allItems {
-    height: 50vh;
+    height: 55vh;
     width: 100%;
     background-color: #E8E8E8;
 }
@@ -164,3 +432,6 @@
     border-radius: 2px;
     margin-left: 30px;
 }
+
+
+/* Purchase modal Popup till here*/
