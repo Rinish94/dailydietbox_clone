@@ -6,6 +6,9 @@ var itemObj = [
     name: "Peanut Butter Banana",
     price: 130.01,
     tag: "Veg & Vegan",
+    milk: ["almond milk", "soya milk", "milk"],
+    seeds: ["sesame", "pumpkin", "flax", "chia"],
+    category: ["veg"],
   },
   {
     id: 2,
@@ -14,6 +17,8 @@ var itemObj = [
     name: "Vanilla Coffee",
     price: 150.0,
     tag: false,
+    milk: ["soya milk", "milk", "amound milk"],
+    category: ["veg"],
   },
   {
     id: 3,
@@ -22,6 +27,8 @@ var itemObj = [
     name: "French Toasts",
     price: 130.0,
     tag: "Veg & Egg",
+    milk: ["soya milk", "milk", "amound milk"],
+    category: ["veg", "eggs"],
   },
   {
     id: 4,
@@ -30,6 +37,9 @@ var itemObj = [
     name: "Almond Coconut",
     price: 130.0,
     tag: false,
+    milk: ["soya milk", "milk", "amound milk"],
+    seeds: ["sesame", "pumpkin", "flax", "chia"],
+    category: ["veg"],
   },
   {
     id: 5,
@@ -38,6 +48,8 @@ var itemObj = [
     name: "Oatmeal Berry",
     price: 130.0,
     tag: "Shake",
+    milk: ["soya milk", "milk", "amound milk"],
+    category: ["veg"],
   },
   {
     id: 6,
@@ -46,6 +58,8 @@ var itemObj = [
     name: "Oats Pancakes",
     price: 130.0,
     tag: "Veg",
+    seeds: ["sesame", "pumpkin", "flax", "chia"],
+    category: ["veg"],
   },
   {
     id: 7,
@@ -54,6 +68,8 @@ var itemObj = [
     name: "Scrumbled Chickpeas on Toast",
     price: 130.0,
     tag: "Veg",
+    milk: ["soya milk", "milk", "amound milk"],
+    category: ["veg"],
   },
   {
     id: 8,
@@ -62,6 +78,7 @@ var itemObj = [
     name: "Scrumbled Eggs on Toast",
     price: 130.0,
     tag: "Egg",
+    category: ["eggs"],
   },
   {
     id: 9,
@@ -70,6 +87,9 @@ var itemObj = [
     name: "Overnigh Oats",
     price: 130.0,
     tag: "Veg(Dairy & Non-Dairy)",
+    milk: ["soya milk", "milk", "amound milk"],
+    seeds: ["sesame", "pumpkin", "flax", "chia"],
+    category: ["veg"],
   },
   {
     id: 10,
@@ -78,6 +98,7 @@ var itemObj = [
     name: "Boiled Eggs",
     price: 130.0,
     tag: "Eggs",
+    category: ["eggs"],
   },
   {
     id: 11,
@@ -86,6 +107,8 @@ var itemObj = [
     name: "Tripled Layered Sandwich",
     price: 130.0,
     tag: "Veg, Non-Veg & Egg",
+    seeds: ["sesame", "pumpkin", "flax", "chia"],
+    category: ["veg", "chicken", "eggs"],
   },
   {
     id: 12,
@@ -94,6 +117,8 @@ var itemObj = [
     name: "Spinach Mushroom Omelette: 4 Eggs",
     price: 130.0,
     tag: "Eggs",
+    milk: ["soya milk", "milk", "amound milk"],
+    category: ["eggs"],
   },
 ];
 let isMilkClick = true;
@@ -218,8 +243,20 @@ function milkMouseEnter() {
 function handleMilkClick(event) {
   if (isMilkClick) {
     this.style.border = "1px solid gray";
+    let milkOpt = milkFilter[
+      event.target.getAttribute("class").split(" ")[1]
+    ].toLowerCase();
+    data = data.filter((el) => {
+      if (el.milk != undefined && el.milk.includes(milkOpt)) {
+        return true;
+      }
+      return false;
+    });
+    sortAndAddData();
   } else {
+    data = JSON.parse(localStorage.getItem("data"));
     this.style.border = "none";
+    sortAndAddData();
   }
   isMilkClick = !isMilkClick;
   event.stopPropagation();
@@ -246,7 +283,19 @@ function seedsMouseLeave() {
 function handleSeedOptClick(event) {
   if (isSeedOptClick) {
     this.style.border = "1px solid gray";
+    let seedOpt = seedFilter[
+      event.target.getAttribute("class").split(" ")[1]
+    ].toLowerCase();
+    data = data.filter((el) => {
+      if (el.seeds != undefined && el.seeds.includes(seedOpt)) {
+        return true;
+      }
+      return false;
+    });
+    sortAndAddData();
   } else {
+    data = JSON.parse(localStorage.getItem("data"));
+    sortAndAddData();
     this.style.border = "none";
   }
   isSeedOptClick = !isSeedOptClick;
@@ -271,8 +320,21 @@ function vegNonVegMouseEnter() {
 function handleVNvegClick(event) {
   if (isVNvegClick) {
     this.style.border = "1px solid gray";
+    let vnonOpt = vnonFilter[
+      event.target.getAttribute("class").split(" ")[1]
+    ].toLowerCase();
+    console.log(vnonOpt);
+    data = data.filter((el) => {
+      if (el.category.includes(vnonOpt)) {
+        return true;
+      }
+      return false;
+    });
+    sortAndAddData();
   } else {
+    data = JSON.parse(localStorage.getItem("data"));
     this.style.border = "none";
+    sortAndAddData();
   }
   isVNvegClick = !isVNvegClick;
   event.stopPropagation();

@@ -64,9 +64,11 @@ body {
   background-color: rgb(228, 228, 228);
   font-family: "Raleway", sans-serif;
 }
-
-.filter-list {
-  flex-basis: 135%;
+.items-container > * {
+  flex: 1;
+}
+.items-container > .filter-list {
+  flex: 0.3;
 }
 .list-item > .list-heading {
   display: flex;
