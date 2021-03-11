@@ -55,8 +55,6 @@ mealImg.forEach((val, ind) => {
 
 //cart Item counter starts here
 let itemCount = document.querySelector('text')
-let add = document.getElementById('add')
-let del = document.getElementById('del')
 
 setInterval(() => {
     if (localStorage.getItem('itemCount') != null) {
@@ -66,6 +64,9 @@ setInterval(() => {
     }
 }, 200)
 
+//For demo only (add and remove item elements of the HTML page)
+let add = document.getElementById('add')
+let del = document.getElementById('del')
 add.addEventListener('click', () => {
     items = Number(itemCount.innerHTML)
     items++
@@ -79,6 +80,7 @@ del.addEventListener('click', () => {
         localStorage.setItem('itemCount', items)
     }
 })
+//Demo ends here
 //cart Item counter ends here
 
 
