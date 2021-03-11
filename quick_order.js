@@ -97,6 +97,9 @@ var itemObj = [
   },
 ];
 let isMilkClick = true;
+let isSeedOptClick = true;
+let isSeedsClick = true;
+let isVNvegClick = true;
 let milkFilter = {
   yellow: "Almond Milk",
   green: "Soya Milk",
@@ -113,11 +116,60 @@ let vnonFilter = {
   green: "Veg",
   yellow: "Eggs",
 };
+let data = JSON.parse(localStorage.getItem("data"));
 window.onload = () => {
   localStorage.setItem("data", JSON.stringify(itemObj));
-  let data = JSON.parse(localStorage.getItem("data"));
-  document.getElementById("sort").addEventListener("change", changeData);
-  var sort = document.getElementById("sort").value;
+  sortAndAddData();
+
+  document.getElementById("sort").addEventListener("change", sortAndAddData);
+  document
+    .getElementById("priceRange")
+    .addEventListener("click", handleBreadClick);
+
+  let milkOpt = document.querySelectorAll("#milk > .outer-border");
+  milkOpt.forEach((el) => {
+    el.addEventListener("mouseenter", milkMouseEnter);
+    el.addEventListener("mouseleave", milkMouseLeave);
+    el.addEventListener("click", handleMilkClick);
+  });
+
+  let seedOption = document.querySelectorAll("#seed-option > .outer-border");
+  seedOption.forEach((el) => {
+    el.addEventListener("mouseenter", seedsMouseEnter);
+    el.addEventListener("mouseleave", seedsMouseLeave);
+    el.addEventListener("click", handleSeedOptClick);
+  });
+
+  let seed = document.querySelectorAll("#seed > .outer-border");
+  seed.forEach((el) => {
+    el.addEventListener("mouseenter", seedsMouseEnter);
+    el.addEventListener("mouseleave", seedsMouseLeave);
+    el.addEventListener("click", handleSeedOptClick);
+  });
+
+  let vegNonVeg = document.querySelectorAll("#veg-non-veg > .outer-border");
+  vegNonVeg.forEach((el) => {
+    el.addEventListener("mouseenter", vegNonVegMouseEnter);
+    el.addEventListener("mouseleave", vegNonVegMouseLeave);
+    el.addEventListener("click", handleVNvegClick);
+  });
+
+  let bread = document.querySelectorAll("#bread > .list-body");
+  bread.forEach((el) => {
+    el.addEventListener("click", handleBreadClick);
+  });
+
+  let lists = document.querySelectorAll(".list-item");
+  lists.forEach((el) => {
+    el.addEventListener("click", listClick);
+  });
+};
+
+let filterClickToggle = true;
+let temp;
+
+function sortAndAddData() {
+  let sort = document.getElementById("sort").value;
   if (sort == "nameAZ") {
     data = data.sort((a, b) => {
       if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
@@ -143,50 +195,87 @@ window.onload = () => {
   data.forEach((el) => {
     addItems(el);
   });
-  document
-    .getElementById("priceRange")
-    .addEventListener("click", handleBreadClick);
-  let milkOpt = document.querySelectorAll("#milk > .outer-border");
-  milkOpt.forEach((el) => {
-    el.addEventListener("mouseenter", milkMouseEnter);
-    el.addEventListener("mouseleave", milkMouseLeave);
-    el.addEventListener("click", handleClick);
-  });
-  let seedOption = document.querySelectorAll("#seed-option > .outer-border");
-  seedOption.forEach((el) => {
-    el.addEventListener("mouseenter", seedsMouseEnter);
-    el.addEventListener("mouseleave", seedsMouseLeave);
-    el.addEventListener("click", handleClick);
-  });
-  let seed = document.querySelectorAll("#seed > .outer-border");
-  seed.forEach((el) => {
-    el.addEventListener("mouseenter", seedsMouseEnter);
-    el.addEventListener("mouseleave", seedsMouseLeave);
-    el.addEventListener("click", handleClick);
-  });
-  let vegNonVeg = document.querySelectorAll("#veg-non-veg > .outer-border");
-  vegNonVeg.forEach((el) => {
-    el.addEventListener("mouseenter", vegNonVegMouseEnter);
-    el.addEventListener("mouseleave", vegNonVegMouseLeave);
-    el.addEventListener("click", handleClick);
-  });
-  let bread = document.querySelectorAll("#bread > .list-body");
-  bread.forEach((el) => {
-    el.addEventListener("click", handleBreadClick);
-  });
-  let lists = document.querySelectorAll(".list-item");
-  lists.forEach((el) => {
-    el.addEventListener("click", listClick);
-  });
-};
-let filterClickToggle = true;
-let temp;
+}
+
 function handleBreadClick() {
   event.stopPropagation();
 }
 
-function changeData() {
-  window.onload();
+function milkMouseLeave() {
+  let milkName = this.parentElement.parentElement.querySelector(
+    ".list-heading>p"
+  );
+  milkName.innerHTML = "Milk Options";
+}
+function milkMouseEnter() {
+  let [, color] = this.querySelector("div").getAttribute("class").split(" ");
+  let milkName = this.parentElement.parentElement.querySelector(
+    ".list-heading>p"
+  );
+  milkName.innerHTML = milkName.innerHTML + ": " + milkFilter[color];
+}
+
+function handleMilkClick(event) {
+  if (isMilkClick) {
+    this.style.border = "1px solid gray";
+  } else {
+    this.style.border = "none";
+  }
+  isMilkClick = !isMilkClick;
+  event.stopPropagation();
+}
+
+function seedsMouseEnter() {
+  let [, color] = this.querySelector("div").getAttribute("class").split(" ");
+  let seedOptName = this.parentElement.parentElement.querySelector(
+    ".list-heading>p"
+  );
+  seedOptName.innerHTML = seedOptName.innerHTML + ": " + seedFilter[color];
+}
+function seedsMouseLeave() {
+  let seedName = this.parentElement.parentElement.querySelector(
+    ".list-heading>p"
+  );
+  if (this.parentElement.id == "seed") {
+    seedName.innerHTML = "Seeds";
+  } else {
+    seedName.innerHTML = "Seed Options";
+  }
+}
+
+function handleSeedOptClick(event) {
+  if (isSeedOptClick) {
+    this.style.border = "1px solid gray";
+  } else {
+    this.style.border = "none";
+  }
+  isSeedOptClick = !isSeedOptClick;
+  event.stopPropagation();
+}
+
+function vegNonVegMouseLeave() {
+  let vnonName = this.parentElement.parentElement.querySelector(
+    ".list-heading>p"
+  );
+  vnonName.innerHTML = "Veg / Non-Veg";
+}
+
+function vegNonVegMouseEnter() {
+  let [, color] = this.querySelector("div").getAttribute("class").split(" ");
+  let vnonName = this.parentElement.parentElement.querySelector(
+    ".list-heading>p"
+  );
+  vnonName.innerHTML = vnonName.innerHTML + ": " + vnonFilter[color];
+}
+
+function handleVNvegClick(event) {
+  if (isVNvegClick) {
+    this.style.border = "1px solid gray";
+  } else {
+    this.style.border = "none";
+  }
+  isVNvegClick = !isVNvegClick;
+  event.stopPropagation();
 }
 
 function listClick() {
@@ -214,61 +303,6 @@ function listClick() {
     this.querySelector(".list-heading>i").setAttribute("class", "fa fa-plus");
   }
   filterClickToggle = !filterClickToggle;
-}
-function milkMouseLeave() {
-  let milkName = this.parentElement.parentElement.querySelector(
-    ".list-heading>p"
-  );
-  milkName.innerHTML = "Milk Options";
-}
-function milkMouseEnter() {
-  let [, color] = this.querySelector("div").getAttribute("class").split(" ");
-  let milkName = this.parentElement.parentElement.querySelector(
-    ".list-heading>p"
-  );
-  milkName.innerHTML = milkName.innerHTML + ": " + milkFilter[color];
-}
-function seedsMouseEnter() {
-  let [, color] = this.querySelector("div").getAttribute("class").split(" ");
-  let seedOptName = this.parentElement.parentElement.querySelector(
-    ".list-heading>p"
-  );
-  seedOptName.innerHTML = seedOptName.innerHTML + ": " + seedFilter[color];
-}
-function seedsMouseLeave() {
-  let seedName = this.parentElement.parentElement.querySelector(
-    ".list-heading>p"
-  );
-  if (this.parentElement.id == "seed") {
-    seedName.innerHTML = "Seeds";
-  } else {
-    seedName.innerHTML = "Seed Options";
-  }
-}
-
-function vegNonVegMouseLeave() {
-  let vnonName = this.parentElement.parentElement.querySelector(
-    ".list-heading>p"
-  );
-  vnonName.innerHTML = "Veg / Non-Veg";
-}
-
-function vegNonVegMouseEnter() {
-  let [, color] = this.querySelector("div").getAttribute("class").split(" ");
-  let vnonName = this.parentElement.parentElement.querySelector(
-    ".list-heading>p"
-  );
-  vnonName.innerHTML = vnonName.innerHTML + ": " + vnonFilter[color];
-}
-
-function handleClick(event) {
-  if (isMilkClick) {
-    this.style.border = "1px solid gray";
-  } else {
-    this.style.border = "none";
-  }
-  isMilkClick = !isMilkClick;
-  event.stopPropagation();
 }
 
 function addItems(data) {
@@ -310,10 +344,19 @@ function addItems(data) {
   card.addEventListener("mouseenter", showTag2);
   card.addEventListener("mouseleave", hideTag2);
   card.addEventListener("click", itemIdSend);
+  tag2.addEventListener("click", popUpCart);
   card.append(cardImg);
   card.append(cardText);
   products.append(card);
 }
+
+// POP UP CART
+function popUpCart(event) {
+  // Product Id
+  console.log(event.target.parentElement.parentElement.id);
+  event.stopPropagation();
+}
+
 function showTag2(event) {
   event.target.querySelector(".tag2").innerHTML = "Quick View";
   event.target.querySelector(".tag2").style.height = "auto";
