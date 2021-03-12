@@ -570,13 +570,14 @@ html .ui-button.ui-state-disabled:active {
 }
 
 .prdQuantity {
-    height: 20px;
+    height: 25px;
     width: 60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: rgb(32, 32, 32);
     color: white;
-    padding: 3px;
+    align-items: center;
+    font-size: 15px;
 }
 
 .subtotal {
