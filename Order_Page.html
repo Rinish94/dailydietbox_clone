@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Order_Page.css" />
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="nav">
+            <div class="nItem" id="logo">
+                <a href="#">
+                    <img src="https://static.wixstatic.com/media/7d8e8d_a9425b8a1c8c4997a258c737bf967ce8~mv2.png/v1/fill/w_59,h_68,al_c,q_85,usm_0.66_1.00_0.01/7d8e8d_a9425b8a1c8c4997a258c737bf967ce8~mv2.webp" alt="">
+                </a>
+
+                <span>DAILY DIET BOXES</span>
+            </div>
+            <div class="nItem" id="menu">
+                <ul>
+                    <a href="index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="#">
+                        <li>Consult</li>
+                    </a>
+                    <a href="Order_Page.html">
+                        <li>Order Now</li>
+                    </a>
+                    <a href="#">
+                        <li>Meal Plans</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="nItem" id="signIn">
+                <button id="loginBtn"><a href="#">Login /Sign Up</a> </button>
+                <a href="#">
+                    <svg width="47px" viewBox="163.7 331.4 267.8 178.8" preserveAspectRatio="xMinYMax meet" fill="white">
+                        <path
+                            d="M243.4 425.1l-29.7-47.9 -9.1 5.6 26.2 42.2h-67.1v10.7h3l19.1 70.2c0.6 2.4 3 4.2 5.4 4.2h97c2.4 0 4.2-1.8 4.2-3.6l19.6-70.8h4.2v-10.7H243.4zM221.4 473.3v10.7h-10.7V473.3H221.4zM210.7 461.4v-10.7h10.7v10.7H210.7zM244.7 473.3v10.7h-10.7V473.3H244.7zM233.9 461.4v-10.7h10.7v10.7H233.9zM257.8 484V473.3h10.7v10.7H257.8zM268.5 461.4h-10.7v-10.7h10.7V461.4z">
+                        </path>
+                        <path fill="rgb(255 97 97)"
+                            d="M383.4 334c35.7 10.7 56 47.6 45.2 83.3 -10.7 35.7-47.6 56-83.3 45.2 -35.7-10.7-56-47.6-45.2-83.3C310.7 344.2 348.2 323.9 383.4 334z">
+                        </path>
+                        <text font-size="80px" fill="white" x="365" y="370" dy=".70em" text-anchor="middle">0</text>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="OrderNowItems">
+        <div class="heading">
+            <div style="display: flex">
+                <hr />
+                <span class="dot"></span>
+            </div>
+            <h2>Quick Order</h2>
+            <div style="display: flex">
+                <span class="dot"></span>
+                <hr />
+            </div>
+        </div>
+        <div id="quick-order">
+            <div class="option">
+                <h2>Filter by</h2>
+                <select id="sort">
+            <option value="orignal">Sort By</option>
+            <option value="newest">Newest</option>
+            <option value="lowToHigh">Price (Low to High)</option>
+            <option value="HighTolow">Price (High to Low)</option>
+            <option value="nameAZ">Name (A - Z)</option>
+            <option value="nameZA">Name (Z - A)</option>
+          </select>
+            </div>
+            <div class="items-container">
+                <div class="filter-list">
+                    <div id="price" class="list-item border-top">
+                        <div class="list-heading">
+                            <p>Price</p>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                        <div class="list-body">
+                            <div id="slider-range"></div>
+                            <p>
+                                <input type="text" id="amount" readonly style="border: 0; color: black; font-weight: bold" />
+                            </p>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-heading">
+                            <p>Milk Options</p>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                        <div id="milk" class="list-body">
+                            <div class="outer-border">
+                                <div class="circle white"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle yellow"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle green"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-heading">
+                            <p>Seed Options</p>
+                            <i class="fa fa-plus"></i>
+                        </div>
+
+                        <div id="seed-option" class="list-body">
+                            <div class="outer-border">
+                                <div class="circle gray"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle maroon"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle green"></div>
+                            </div>
+                            <div class="outer-border">
+                                <div class="circle yellow"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="seeds" class="list-item">
+                        <div class="list-heading">
+                            <p>Seeds</p>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                        <div id="seed" class="list-body">
+                            <div class="outer-border">
+                                <div class="circle gray"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle maroon"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle green"></div>
+                            </div>
+                            <div class="outer-border">
+                                <div class="circle yellow"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-heading">
+                            <p>Veg / Non-Veg</p>
+                            <i class="fa fa-plus"></i>
+                        </div>
+
+                        <div id="veg-non-veg" class="list-body">
+                            <div class="outer-border">
+                                <div class="circle red"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle yellow"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle green"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bread" class="list-item">
+                        <div class="list-heading">
+                            <p>Bread Options</p>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                        <div class="list-body">
+                            <div><input type="checkbox" /> Brown Bread</div>
+                            <div><input type="checkbox" /> Milk Bread</div>
+                            <div><input type="checkbox" /> Multigrane</div>
+                            <div><input type="checkbox" /> Whole Wheat</div>
+                        </div>
+                    </div>
+                    <div id="clear" class="list-item">
+                        <div class="list-heading">
+                            <p>Clear Filter</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="products" class="items"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Popup -->
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="close">+</div>
+            <div class="cartPopUp">
+                <div id="imageCont">
+                    <img alt=" Product image" class="prdImage">
+                </div>
+                <div id="choiceCont">
+                    <div>
+                        <div style="margin-bottom:20px; ">
+                            <div class="productName" style="color:#81C147;font-size:2.00em;font-weight:600; ">#</div>
+                            <div class="productprice" style="color:#81C147;font-size:1.5em;font-family:sans-serif;">INR #</div>
+                        </div>
+                        <div style="margin-bottom:20px;" class="milk-options">
+                            <p class="milkOptions" style="font-size:12px;color:grey;">Milk Options:</p>
+                            <div class="options">
+                                <div style="background:white;" class="colorOptions wh"></div>
+                                <div style="background:yellow;" class="colorOptions yl"></div>
+                                <div style="background:green;" class="colorOptions gr"></div>
+                            </div>
+
+                        </div>
+                        <div style="margin-bottom:20px;">
+                            <p style="font-size:12px;color:grey;">What not to add? (optional)</p>
+                            <input type="text" maxlength="20" id="notToAdd">
+                        </div>
+                        <div>
+                            <p style="font-size:12px;color:grey;">Quantity</p>
+                            <input type="number" id="quantity" value="1">
+                        </div>
+                        <div id="addToCart">Add To Cart</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--Modal Popup till here  -->
+
+
+    <!-- Purchase Popup -->
+    <div class="purchase-modal">
+        <div class="purchase-content">
+            <div class="plans">
+                <div class="myPlans">
+                    <div class="purchase-close">></div>
+                    <p class="plansText">My Plans</p>
+                </div>
+            </div>
+            <div class="allItems">
+                <div class="cartItems">
+                    <!-- <div>
+                        <div class="cancelCarttems">+</div>
+                        <div class="imgDiv">
+                            <img src="" alt="">
+                        </div>
+                        <div class="prdDeatils">
+                            <div class="prdName">ajay</div>
+                            <div class="prdPrice">ajay</div>
+                            <div class="prdQuantity">
+                                <div>-</div>
+                                <div class="prdNumber">1</div>
+                                <div>+</div>
+                            </div>
+                        </div>
+
+                    </div> -->
+                </div>
+            </div>
+            <div class="subtotal">
+                <div>
+                    <div>Subtotal</div>
+                    <div class="totalPrice">INR 0</div>
+                </div>
+
+            </div>
+
+            <div class="plans vpurchase">
+                <div id="viewPurchase">View Purchase</div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="Order_Page.js"></script>
+</body>
+
+</html>

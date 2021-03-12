@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./ChatBot.css">
+</head>
+
+<body>
+    <div class="botcont">
+        <div class="botDiv">
+            <img class="smilye"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ALbMP6l8OoX7MtRnkc8IXlUbyAOMn0ELww&usqp=CAU">
+            <h2 class="bot" onclick="">Let's Chat!</h2>
+            <img class="arrow" onclick=""
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-d-vrdVyapCVY8Sv8GrEC_TK_PG90hofwSg&usqp=CAU">
+
+
+            <div class="modal-box">
+                <div class="modal_cont">
+
+                    <div class="box">
+                        <div class="top">
+                            <h3>Let's Chat</h3>
+                        </div>
+                        <div class="mid">
+                            <div class="chat">
+                                <p id="chatLog"> Hey there! Before we chat, please Sign up so we can easily get in
+                                    touch. </p>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <input type="text" id="userBox" onkeydown="if(event.keyCode == 13){ talk()}"
+                                placeholder="Type your Question">
+                        </div>
+                    </div>
+                    <span class="modal-close_icon">X</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./ChatBot.js"></script>
+</body>
+
+</html>
