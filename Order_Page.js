@@ -1,14 +1,18 @@
-window.onscroll = function() { myFunction() };
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
+// CartIcon updater starts here 
+let itemCount = document.querySelector('text')
+setInterval(() => {
+    if (localStorage.getItem('itemCount') != null) {
+        itemCount.innerHTML = localStorage.getItem('itemCount')
     } else {
-        navbar.classList.remove("sticky");
+        itemCount.innerHTML = 0
     }
-}
+}, 200)
+
+
+
+// CartIcon updater ends here 
+
+
 
 
 
