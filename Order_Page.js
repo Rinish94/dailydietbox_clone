@@ -522,11 +522,13 @@ milk_Options.forEach((ele) => {
 })
 var cartAllData = []
 var para = document.createElement('p')
+var para1 = document.createElement('p')
 document.getElementById('addToCart').addEventListener('click', () => {
     var productName = document.querySelector('.productName').innerText
     var productPrice = document.querySelector('.productprice').innerText
     var cartDataObj = {}
     para.textContent = ""
+    para1.textContent = " "
     if (options.innerText == "Milk Options:") {
         para.style.color = "red"
         para.style.fontSize = "12px"
@@ -557,7 +559,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
             var totalCartPrice = Number(cart[1])
             return [totalCartPrice, productprice]
         }
-        var para1 = document.createElement('p')
+
 
         function checkingEmptyCart(val) {
             if (val == 0) {
@@ -565,8 +567,6 @@ document.getElementById('addToCart').addEventListener('click', () => {
                 para1.style.cssText = "color:red;font-size:20px;font-weight:bold;"
                 document.querySelector('.cartItems').append(para1)
             }
-
-
         }
         para1.textContent = ""
         var quantity = document.getElementById('quantity').value
@@ -584,7 +584,12 @@ document.getElementById('addToCart').addEventListener('click', () => {
             canc.addEventListener('click', () => {
 
                 var [totalCartPrice, productprice] = subTotalPrice(event.target.parentElement)
-                totalPrice.textContent = "INR " + (totalCartPrice - Math.floor(productprice * quantity))
+                if ((totalCartPrice - Math.floor(productprice * quantity)) <= 0) {
+                    totalPrice.textContent = "INR " + 0
+                } else {
+                    totalPrice.textContent = "INR " + (totalCartPrice - Math.floor(productprice * quantity))
+                }
+
                 event.target.parentElement.remove()
                 hDv.remove()
                 var totalPrice1 = document.querySelector('.totalPrice')
@@ -620,7 +625,6 @@ document.getElementById('addToCart').addEventListener('click', () => {
         p11.textContent = "-"
         p11.style.cssText = "cursor:pointer;font-size:15px;"
 
-
         divIn.appendChild(p11)
         var p12 = document.createElement('div')
         p12.setAttribute('class', 'prdNumber')
@@ -630,7 +634,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
         var p13 = document.createElement('div')
         p13.textContent = "+"
         divIn.appendChild(p13)
-        p11.style.cssText = "cursor:pointer;font-size:15px;"
+        p13.style.cssText = "cursor:pointer;font-size:15px;"
 
         document.querySelector('.cartItems').append(Oidiv)
         var hDv = document.createElement('div')
@@ -644,7 +648,12 @@ document.getElementById('addToCart').addEventListener('click', () => {
                 p12.textContent = --quantity
                     // console.log(event.target.parentElement.parentElement)
                 var [totalCartPrice, productprice] = subTotalPrice(event.target.parentElement.parentElement)
-                totalPrice.textContent = "INR " + Math.floor(totalCartPrice - productprice)
+                if ((totalCartPrice - productprice) <= 0) {
+                    totalPrice.textContent = "INR " + 0
+                } else {
+                    totalPrice.textContent = "INR " + Math.floor(totalCartPrice - productprice)
+                }
+
             }
 
         });
@@ -687,3 +696,6 @@ document.querySelector('.close').addEventListener('click', () => {
 document.querySelector('.purchase-close').addEventListener('click', () => {
     document.querySelector('.purchase-modal').style.display = "none"
 })
+
+
+// chat bot

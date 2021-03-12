@@ -1,16 +1,18 @@
 body {
     background-color: #2D2D2D;
     font-family: "Raleway", sans-serif;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .order-summary {
     width: 70%;
-    height: 100vh;
     margin: auto;
     background: white;
     padding: 40px;
     display: flex;
     justify-content: space-between;
+    height: 100%;
 }
 
 hr {
