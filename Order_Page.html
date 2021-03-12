@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="Order_Page.css" />
@@ -38,13 +39,16 @@
         </div>
         <div class="items-container">
             <div class="filter-list">
-                <div class="list-item border-top">
+                <div id="price" class="list-item border-top">
                     <div class="list-heading">
                         <p>Price</p>
                         <i class="fa fa-plus"></i>
                     </div>
                     <div class="list-body">
-                        <input id="priceRange" type="range" />
+                        <div id="slider-range"></div>
+                        <p>
+                            <input type="text" id="amount" readonly style="border: 0; color: black; font-weight: bold" />
+                        </p>
                     </div>
                 </div>
                 <div class="list-item">
@@ -143,6 +147,11 @@
                         <div><input type="checkbox" /> Whole Wheat</div>
                     </div>
                 </div>
+                <div id="clear" class="list-item">
+                    <div class="list-heading">
+                        <p>Clear Filter</p>
+                    </div>
+                </div>
             </div>
             <div id="products" class="items"></div>
         </div>
@@ -232,7 +241,9 @@
 
         </div>
     </div>
-    <script src="order_Page.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="Order_Page.js"></script>
 </body>
 
 </html>
