@@ -126,6 +126,18 @@ for (let i = 0; i < AllcarDataItems.length; i++) {
     document.querySelector('.Total').innerText = "INR " + prd_price
 
 }
+document.querySelector('.ch1').addEventListener('mouseenter', () => {
+    event.target.style.cssText = "color:white;background-color: rgb(129, 193, 71);"
+})
+document.querySelector('.ch1').addEventListener('mouseleave', () => {
+    event.target.style.cssText = "color:rgb(129, 193, 71);background-color: white;"
+})
+document.querySelector('.ch2').addEventListener('mouseenter', () => {
+    event.target.style.cssText = "color:white;background-color: rgb(129, 193, 71);"
+})
+document.querySelector('.ch2').addEventListener('mouseleave', () => {
+    event.target.style.cssText = "color:rgb(129, 193, 71);background-color: white;"
+})
 document.querySelector('.ch1').addEventListener('click', () => {
     alert(`You Order is successfully placed!! \n Have a Good Day.`)
     window.location = "Landing_Page.html"
