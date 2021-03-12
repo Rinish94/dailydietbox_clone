@@ -497,8 +497,12 @@ milk_Options.forEach((ele) => {
             options.textContent = "Milk Option: " + " Soy Milk"
     })
 })
+var cartAllData = []
 var para = document.createElement('p')
 document.getElementById('addToCart').addEventListener('click', () => {
+    var productName = document.querySelector('.productName').innerText
+    var productPrice = document.querySelector('.productprice').innerText
+    var cartDataObj = {}
     para.textContent = ""
     if (options.innerText == "Milk Options:") {
         para.style.color = "red"
@@ -519,8 +523,8 @@ document.getElementById('addToCart').addEventListener('click', () => {
         var cart = cartPrice.split(" ")
         var totalCartPrice = Number(cart[1])
 
-        function subTotalPrice() {
-            var product = document.querySelector('.productprice').innerText
+        function subTotalPrice(event) {
+            var product = event.querySelector('.productprice').innerText
             var priceArr = product.split(" ")
             var productprice = Number(priceArr[1])
             var totalPrice = document.querySelector('.totalPrice')
@@ -531,7 +535,8 @@ document.getElementById('addToCart').addEventListener('click', () => {
         }
         var quantity = document.getElementById('quantity').value
         var notToAdd = document.getElementById('notToAdd').value
-        var [totalCartPrice, productprice] = subTotalPrice()
+        var [totalCartPrice, productprice] = subTotalPrice(event.target.parentElement)
+
         totalPrice.textContent = "INR " + (totalCartPrice + (productprice * quantity))
 
         var Oidiv = document.createElement('div')
@@ -544,7 +549,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
                 Oidiv.remove()
                 hDv.remove()
                 var [totalCartPrice, productprice] = subTotalPrice()
-                totalPrice.textContent = "INR " + (totalCartPrice - (productprice * quantity))
+                totalPrice.textContent = "INR " + (totalCartPrice - Math.round(productprice * quantity))
             })
         })
         var Idiv1 = document.createElement('div')
@@ -563,6 +568,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
         p1.innerText = document.querySelector('.productName').innerText
         Idiv2.appendChild(p1)
         var p2 = document.createElement('div')
+        p2.setAttribute('class', 'productprice')
         p2.innerText = document.querySelector('.productprice').innerText
         Idiv2.appendChild(p2)
         var divIn = document.createElement('div')
@@ -590,22 +596,37 @@ document.getElementById('addToCart').addEventListener('click', () => {
         hDv.style.height = "1px"
         hDv.style.marginTop = "30px"
         document.querySelector('.cartItems').appendChild(hDv)
-        p11.addEventListener('click', () => {
+        p11.addEventListener('click', (event) => {
+
             if (quantity >= 1) {
                 p12.textContent = --quantity
-                var [totalCartPrice, productprice] = subTotalPrice()
+                    // console.log(event.target.parentElement.parentElement)
+                var [totalCartPrice, productprice] = subTotalPrice(event.target.parentElement.parentElement)
                 totalPrice.textContent = "INR " + (totalCartPrice - productprice)
             }
 
         });
         p13.addEventListener('click', () => {
+
             if (quantity >= 1) {
                 p12.textContent = ++quantity
-                var [totalCartPrice, productprice] = subTotalPrice()
+                var [totalCartPrice, productprice] = subTotalPrice(event.target.parentElement.parentElement)
                 totalPrice.textContent = "INR " + (totalCartPrice + productprice)
             }
 
         });
+        document.getElementById('viewPurchase').addEventListener('click', () => {
+            cartDataObj.prdName = productName
+            cartDataObj.prdPrice = productPrice
+            cartDataObj.milkOptions = options.innerText
+            cartDataObj.prdImages = divImage
+            cartDataObj.prdQuantity = quantity
+            cartDataObj.totalPrice = totalPrice.textContent
+            cartAllData.push(cartDataObj)
+            localStorage.setItem('allCartItems', JSON.stringify(cartAllData))
+            window.location = "orderSummary.html";
+        })
+
     }
 
 

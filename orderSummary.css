@@ -1,0 +1,117 @@
+body {
+    background-color: #2D2D2D;
+    font-family: "Raleway", sans-serif;
+}
+
+.order-summary {
+    width: 70%;
+    height: 100vh;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+hr {
+    color: grey;
+    opacity: 0.3
+}
+
+.order-items {
+    width: 60%;
+    /* border: 1px solid; */
+}
+
+.order-price {
+    width: 35%;
+    /* border: 1px solid; */
+}
+
+.order-items>.item1Details {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    position: relative;
+}
+
+.cancelCarttems {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    transform: rotate(45deg);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.totalItem1Price {
+    /* width: 15px;
+    height: 15px; */
+    position: absolute;
+    top: 10px;
+    right: 75px;
+    font-size: 15px;
+    color: grey;
+}
+
+.item1Details>.imgDiv {
+    width: 100px;
+    height: 125px;
+    margin: 10px;
+}
+
+.imgDiv>img {
+    width: 100%;
+    height: 100%;
+}
+
+.prdDeatils {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.prdQuantity {
+    height: 20px;
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
+    color: black;
+    padding: 5px 10px;
+    margin-top: 20px;
+}
+
+.prd {
+    color: grey;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.odCont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.orderContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.cheeckout {
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(129, 193, 71);
+    border-radius: 25px;
+    cursor: pointer;
+}

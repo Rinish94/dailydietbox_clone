@@ -14,21 +14,22 @@
 </head>
 
 <body>
-    <div class="heading">
-        <div style="display: flex">
-            <hr />
-            <span class="dot"></span>
+    <div id="OrderNowItems">
+        <div class="heading">
+            <div style="display: flex">
+                <hr />
+                <span class="dot"></span>
+            </div>
+            <h2>Quick Order</h2>
+            <div style="display: flex">
+                <span class="dot"></span>
+                <hr />
+            </div>
         </div>
-        <h2>Quick Order</h2>
-        <div style="display: flex">
-            <span class="dot"></span>
-            <hr />
-        </div>
-    </div>
-    <div id="quick-order">
-        <div class="option">
-            <h2>Filter by</h2>
-            <select id="sort">
+        <div id="quick-order">
+            <div class="option">
+                <h2>Filter by</h2>
+                <select id="sort">
             <option value="orignal">Sort By</option>
             <option value="newest">Newest</option>
             <option value="lowToHigh">Price (Low to High)</option>
@@ -36,124 +37,125 @@
             <option value="nameAZ">Name (A - Z)</option>
             <option value="nameZA">Name (Z - A)</option>
           </select>
-        </div>
-        <div class="items-container">
-            <div class="filter-list">
-                <div id="price" class="list-item border-top">
-                    <div class="list-heading">
-                        <p>Price</p>
-                        <i class="fa fa-plus"></i>
-                    </div>
-                    <div class="list-body">
-                        <div id="slider-range"></div>
-                        <p>
-                            <input type="text" id="amount" readonly style="border: 0; color: black; font-weight: bold" />
-                        </p>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <div class="list-heading">
-                        <p>Milk Options</p>
-                        <i class="fa fa-plus"></i>
-                    </div>
-                    <div id="milk" class="list-body">
-                        <div class="outer-border">
-                            <div class="circle white"></div>
-                        </div>
-
-                        <div class="outer-border">
-                            <div class="circle yellow"></div>
-                        </div>
-
-                        <div class="outer-border">
-                            <div class="circle green"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <div class="list-heading">
-                        <p>Seed Options</p>
-                        <i class="fa fa-plus"></i>
-                    </div>
-
-                    <div id="seed-option" class="list-body">
-                        <div class="outer-border">
-                            <div class="circle gray"></div>
-                        </div>
-
-                        <div class="outer-border">
-                            <div class="circle maroon"></div>
-                        </div>
-
-                        <div class="outer-border">
-                            <div class="circle green"></div>
-                        </div>
-                        <div class="outer-border">
-                            <div class="circle yellow"></div>
-                        </div>
-                    </div>
-                </div>
-                <div id="seeds" class="list-item">
-                    <div class="list-heading">
-                        <p>Seeds</p>
-                        <i class="fa fa-plus"></i>
-                    </div>
-                    <div id="seed" class="list-body">
-                        <div class="outer-border">
-                            <div class="circle gray"></div>
-                        </div>
-
-                        <div class="outer-border">
-                            <div class="circle maroon"></div>
-                        </div>
-
-                        <div class="outer-border">
-                            <div class="circle green"></div>
-                        </div>
-                        <div class="outer-border">
-                            <div class="circle yellow"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <div class="list-heading">
-                        <p>Veg / Non-Veg</p>
-                        <i class="fa fa-plus"></i>
-                    </div>
-
-                    <div id="veg-non-veg" class="list-body">
-                        <div class="outer-border">
-                            <div class="circle red"></div>
-                        </div>
-
-                        <div class="outer-border">
-                            <div class="circle yellow"></div>
-                        </div>
-
-                        <div class="outer-border">
-                            <div class="circle green"></div>
-                        </div>
-                    </div>
-                </div>
-                <div id="bread" class="list-item">
-                    <div class="list-heading">
-                        <p>Bread Options</p>
-                        <i class="fa fa-plus"></i>
-                    </div>
-                    <div class="list-body">
-                        <div><input type="checkbox" /> Brown Bread</div>
-                        <div><input type="checkbox" /> Milk Bread</div>
-                        <div><input type="checkbox" /> Multigrane</div>
-                        <div><input type="checkbox" /> Whole Wheat</div>
-                    </div>
-                </div>
-                <div id="clear" class="list-item">
-                    <div class="list-heading">
-                        <p>Clear Filter</p>
-                    </div>
-                </div>
             </div>
-            <div id="products" class="items"></div>
+            <div class="items-container">
+                <div class="filter-list">
+                    <div id="price" class="list-item border-top">
+                        <div class="list-heading">
+                            <p>Price</p>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                        <div class="list-body">
+                            <div id="slider-range"></div>
+                            <p>
+                                <input type="text" id="amount" readonly style="border: 0; color: black; font-weight: bold" />
+                            </p>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-heading">
+                            <p>Milk Options</p>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                        <div id="milk" class="list-body">
+                            <div class="outer-border">
+                                <div class="circle white"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle yellow"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle green"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-heading">
+                            <p>Seed Options</p>
+                            <i class="fa fa-plus"></i>
+                        </div>
+
+                        <div id="seed-option" class="list-body">
+                            <div class="outer-border">
+                                <div class="circle gray"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle maroon"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle green"></div>
+                            </div>
+                            <div class="outer-border">
+                                <div class="circle yellow"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="seeds" class="list-item">
+                        <div class="list-heading">
+                            <p>Seeds</p>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                        <div id="seed" class="list-body">
+                            <div class="outer-border">
+                                <div class="circle gray"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle maroon"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle green"></div>
+                            </div>
+                            <div class="outer-border">
+                                <div class="circle yellow"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-heading">
+                            <p>Veg / Non-Veg</p>
+                            <i class="fa fa-plus"></i>
+                        </div>
+
+                        <div id="veg-non-veg" class="list-body">
+                            <div class="outer-border">
+                                <div class="circle red"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle yellow"></div>
+                            </div>
+
+                            <div class="outer-border">
+                                <div class="circle green"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bread" class="list-item">
+                        <div class="list-heading">
+                            <p>Bread Options</p>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                        <div class="list-body">
+                            <div><input type="checkbox" /> Brown Bread</div>
+                            <div><input type="checkbox" /> Milk Bread</div>
+                            <div><input type="checkbox" /> Multigrane</div>
+                            <div><input type="checkbox" /> Whole Wheat</div>
+                        </div>
+                    </div>
+                    <div id="clear" class="list-item">
+                        <div class="list-heading">
+                            <p>Clear Filter</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="products" class="items"></div>
+            </div>
         </div>
     </div>
 
