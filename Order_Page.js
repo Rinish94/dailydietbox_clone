@@ -436,7 +436,16 @@ function hideTag2(event) {
 }
 
 function itemIdSend(event) {
-    window.location = `quik_order.html?product_id=${this.id}`;
+    document.querySelector('.bg-modal').style.display = "flex"
+    var contId = event.target.parentElement.parentElement.id
+    for (let i = 0; i < itemObj.length; i++) {
+        if (itemObj[i].id == contId) {
+            document.querySelector('.productName').innerText = itemObj[i].name
+            document.querySelector('.productprice').innerText = "INR " + itemObj[i].price
+            var prdImage = document.querySelector('.prdImage')
+            prdImage.setAttribute('src', itemObj[i].image)
+        }
+    }
 }
 
 function resetFilter() {
@@ -512,6 +521,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
 
     } else {
         para.textContent = ""
+
         options.innerText = "Milk Options:"
         document.querySelector('.purchase-modal').style.display = "flex"
         document.querySelector('.bg-modal').style.display = "none"
@@ -533,11 +543,23 @@ document.getElementById('addToCart').addEventListener('click', () => {
             var totalCartPrice = Number(cart[1])
             return [totalCartPrice, productprice]
         }
+        var para1 = document.createElement('p')
+
+        function checkingEmptyCart(val) {
+            if (val == 0) {
+                para1.textContent = "Your cart is empty now!!"
+                para1.style.cssText = "color:red;font-size:20px;font-weight:bold;"
+                document.querySelector('.cartItems').append(para1)
+            }
+
+
+        }
+        para1.textContent = ""
         var quantity = document.getElementById('quantity').value
         var notToAdd = document.getElementById('notToAdd').value
         var [totalCartPrice, productprice] = subTotalPrice(event.target.parentElement)
 
-        totalPrice.textContent = "INR " + (totalCartPrice + (productprice * quantity))
+        totalPrice.textContent = "INR " + (totalCartPrice + Math.floor(productprice * quantity))
 
         var Oidiv = document.createElement('div')
         Oidiv.addEventListener('mouseenter', () => {
@@ -546,10 +568,16 @@ document.getElementById('addToCart').addEventListener('click', () => {
             canc.setAttribute('class', 'cancelCarttems')
             Oidiv.appendChild(canc)
             canc.addEventListener('click', () => {
-                Oidiv.remove()
+
+                var [totalCartPrice, productprice] = subTotalPrice(event.target.parentElement)
+                totalPrice.textContent = "INR " + (totalCartPrice - Math.floor(productprice * quantity))
+                event.target.parentElement.remove()
                 hDv.remove()
-                var [totalCartPrice, productprice] = subTotalPrice()
-                totalPrice.textContent = "INR " + (totalCartPrice - Math.round(productprice * quantity))
+                var totalPrice1 = document.querySelector('.totalPrice')
+                var cartPrice1 = totalPrice1.textContent
+                var cart1 = cartPrice1.split(" ")
+                var totalCartPrice1 = Math.floor(Number(cart1[1]))
+                checkingEmptyCart(totalCartPrice1)
             })
         })
         var Idiv1 = document.createElement('div')
@@ -576,7 +604,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
         Idiv2.appendChild(divIn)
         var p11 = document.createElement('div')
         p11.textContent = "-"
-        p11.style.cursor = "pointer"
+        p11.style.cssText = "cursor:pointer;font-size:15px;"
 
 
         divIn.appendChild(p11)
@@ -588,7 +616,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
         var p13 = document.createElement('div')
         p13.textContent = "+"
         divIn.appendChild(p13)
-        p13.style.cursor = "pointer"
+        p11.style.cssText = "cursor:pointer;font-size:15px;"
 
         document.querySelector('.cartItems').append(Oidiv)
         var hDv = document.createElement('div')
@@ -602,7 +630,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
                 p12.textContent = --quantity
                     // console.log(event.target.parentElement.parentElement)
                 var [totalCartPrice, productprice] = subTotalPrice(event.target.parentElement.parentElement)
-                totalPrice.textContent = "INR " + (totalCartPrice - productprice)
+                totalPrice.textContent = "INR " + Math.floor(totalCartPrice - productprice)
             }
 
         });
@@ -611,7 +639,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
             if (quantity >= 1) {
                 p12.textContent = ++quantity
                 var [totalCartPrice, productprice] = subTotalPrice(event.target.parentElement.parentElement)
-                totalPrice.textContent = "INR " + (totalCartPrice + productprice)
+                totalPrice.textContent = "INR " + Math.floor(totalCartPrice + productprice)
             }
 
         });
