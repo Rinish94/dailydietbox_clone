@@ -4,6 +4,9 @@ var itemObj = [{
         name: "Peanut Butter Banana",
         price: 130.01,
         tag: "Veg & Vegan",
+        milk: ["almond milk", "soya milk", "milk"],
+        seeds: ["sesame", "pumpkin", "flax", "chia"],
+        category: ["veg"],
     },
     {
         id: 2,
@@ -11,6 +14,8 @@ var itemObj = [{
         name: "Vanilla Coffee",
         price: 150.0,
         tag: false,
+        milk: ["soya milk", "milk", "amound milk"],
+        category: ["veg"],
     },
     {
         id: 3,
@@ -18,6 +23,8 @@ var itemObj = [{
         name: "French Toasts",
         price: 130.0,
         tag: "Veg & Egg",
+        milk: ["soya milk", "milk", "amound milk"],
+        category: ["veg", "eggs"],
     },
     {
         id: 4,
@@ -25,6 +32,9 @@ var itemObj = [{
         name: "Almond Coconut",
         price: 130.0,
         tag: false,
+        milk: ["soya milk", "milk", "amound milk"],
+        seeds: ["sesame", "pumpkin", "flax", "chia"],
+        category: ["veg"],
     },
     {
         id: 5,
@@ -32,6 +42,8 @@ var itemObj = [{
         name: "Oatmeal Berry",
         price: 130.0,
         tag: "Shake",
+        milk: ["soya milk", "milk", "amound milk"],
+        category: ["veg"],
     },
     {
         id: 6,
@@ -39,6 +51,8 @@ var itemObj = [{
         name: "Oats Pancakes",
         price: 130.0,
         tag: "Veg",
+        seeds: ["sesame", "pumpkin", "flax", "chia"],
+        category: ["veg"],
     },
     {
         id: 7,
@@ -46,6 +60,8 @@ var itemObj = [{
         name: "Scrumbled Chickpeas on Toast",
         price: 130.0,
         tag: "Veg",
+        milk: ["soya milk", "milk", "amound milk"],
+        category: ["veg"],
     },
     {
         id: 8,
@@ -53,6 +69,7 @@ var itemObj = [{
         name: "Scrumbled Eggs on Toast",
         price: 130.0,
         tag: "Egg",
+        category: ["eggs"],
     },
     {
         id: 9,
@@ -60,6 +77,9 @@ var itemObj = [{
         name: "Overnigh Oats",
         price: 130.0,
         tag: "Veg(Dairy & Non-Dairy)",
+        milk: ["soya milk", "milk", "amound milk"],
+        seeds: ["sesame", "pumpkin", "flax", "chia"],
+        category: ["veg"],
     },
     {
         id: 10,
@@ -67,6 +87,7 @@ var itemObj = [{
         name: "Boiled Eggs",
         price: 130.0,
         tag: "Eggs",
+        category: ["eggs"],
     },
     {
         id: 11,
@@ -74,6 +95,8 @@ var itemObj = [{
         name: "Tripled Layered Sandwich",
         price: 130.0,
         tag: "Veg, Non-Veg & Egg",
+        seeds: ["sesame", "pumpkin", "flax", "chia"],
+        category: ["veg", "chicken", "eggs"],
     },
     {
         id: 12,
@@ -81,6 +104,8 @@ var itemObj = [{
         name: "Spinach Mushroom Omelette: 4 Eggs",
         price: 130.0,
         tag: "Eggs",
+        milk: ["soya milk", "milk", "amound milk"],
+        category: ["eggs"],
     },
 ];
 let isMilkClick = true;
@@ -109,10 +134,6 @@ window.onload = () => {
     sortAndAddData();
 
     document.getElementById("sort").addEventListener("change", sortAndAddData);
-    document
-        .getElementById("priceRange")
-        .addEventListener("click", handleBreadClick);
-
     let milkOpt = document.querySelectorAll("#milk > .outer-border");
     milkOpt.forEach((el) => {
         el.addEventListener("mouseenter", milkMouseEnter);
@@ -148,8 +169,11 @@ window.onload = () => {
 
     let lists = document.querySelectorAll(".list-item");
     lists.forEach((el) => {
-        el.addEventListener("click", listClick);
+        if (el.id != "clear") {
+            el.addEventListener("click", listClick);
+        }
     });
+    document.querySelector("#clear").addEventListener("click", resetFilter);
 };
 
 let filterClickToggle = true;
@@ -206,11 +230,24 @@ function milkMouseEnter() {
 function handleMilkClick(event) {
     if (isMilkClick) {
         this.style.border = "1px solid gray";
+        let milkOpt = milkFilter[
+            event.target.getAttribute("class").split(" ")[1]
+        ].toLowerCase();
+        data = data.filter((el) => {
+            if (el.milk != undefined && el.milk.includes(milkOpt)) {
+                return true;
+            }
+            return false;
+        });
+        sortAndAddData();
     } else {
+        data = JSON.parse(localStorage.getItem("data"));
         this.style.border = "none";
+        sortAndAddData();
     }
     isMilkClick = !isMilkClick;
     event.stopPropagation();
+    showClearFilter();
 }
 
 function seedsMouseEnter() {
@@ -235,11 +272,24 @@ function seedsMouseLeave() {
 function handleSeedOptClick(event) {
     if (isSeedOptClick) {
         this.style.border = "1px solid gray";
+        let seedOpt = seedFilter[
+            event.target.getAttribute("class").split(" ")[1]
+        ].toLowerCase();
+        data = data.filter((el) => {
+            if (el.seeds != undefined && el.seeds.includes(seedOpt)) {
+                return true;
+            }
+            return false;
+        });
+        sortAndAddData();
     } else {
+        data = JSON.parse(localStorage.getItem("data"));
+        sortAndAddData();
         this.style.border = "none";
     }
     isSeedOptClick = !isSeedOptClick;
     event.stopPropagation();
+    showClearFilter();
 }
 
 function vegNonVegMouseLeave() {
@@ -260,10 +310,24 @@ function vegNonVegMouseEnter() {
 function handleVNvegClick(event) {
     if (isVNvegClick) {
         this.style.border = "1px solid gray";
+        let vnonOpt = vnonFilter[
+            event.target.getAttribute("class").split(" ")[1]
+        ].toLowerCase();
+        console.log(vnonOpt);
+        data = data.filter((el) => {
+            if (el.category.includes(vnonOpt)) {
+                return true;
+            }
+            return false;
+        });
+        sortAndAddData();
     } else {
+        data = JSON.parse(localStorage.getItem("data"));
         this.style.border = "none";
+        sortAndAddData();
     }
     isVNvegClick = !isVNvegClick;
+    showClearFilter();
     event.stopPropagation();
 }
 
@@ -273,6 +337,10 @@ function listClick() {
             this.style.transition = "all 0.3s";
             this.querySelector(".list-body").style.display = "block";
             this.style.height = "150px";
+        } else if (this.id == "price") {
+            this.style.transition = "all 0.3s";
+            this.querySelector(".list-body").style.display = "block";
+            this.style.height = "120px";
         } else {
             this.style.transition = "all 0.3s";
             this.style.height = "95px";
@@ -370,6 +438,50 @@ function hideTag2(event) {
 function itemIdSend(event) {
     window.location = `quik_order.html?product_id=${this.id}`;
 }
+
+function resetFilter() {
+    location.reload();
+}
+
+function showClearFilter() {
+    document.getElementById("clear").style.display = "block";
+}
+let itemMax;
+let itemMin;
+$(function() {
+    data.forEach(function(el) {
+        if (itemMax == undefined || itemMax < el.price) {
+            itemMax = el.price;
+        }
+        if (itemMin == undefined || itemMin > el.price) {
+            itemMin = el.price;
+        }
+    });
+    $("#slider-range").slider({
+        range: true,
+        min: itemMin,
+        max: itemMax,
+        values: [itemMin, itemMax],
+        slide: function(event, ui) {
+            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            data = JSON.parse(localStorage.getItem("data"));
+            data = data.filter((el) => {
+                if (el.price >= ui.values[0] && el.price <= ui.values[1]) {
+                    return true;
+                }
+                return false;
+            });
+            sortAndAddData();
+            event.stopPropagation();
+        },
+    });
+    $("#amount").val(
+        "$" +
+        $("#slider-range").slider("values", 0) +
+        " - $" +
+        $("#slider-range").slider("values", 1)
+    );
+});
 //Modal Popup js code
 var options = document.querySelector('.milkOptions')
 var milk_Options = document.querySelectorAll('.colorOptions')
