@@ -62,6 +62,7 @@ body {
     height: 45px;
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid white;
+    outline: none;
 }
 
 #loginBtn>a {
@@ -182,7 +183,11 @@ body {
 #mainContainer p:nth-of-type(3) {
     font-size: 1.4em;
 }
+.boxShade{
 
+    box-shadow: 0 0 12px #333;
+
+}
 #arrow {
     transform: rotate(180deg);
     height: 32px;
