@@ -1,6 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('http://db.onlinewebfonts.com/c/16efa2896f117dae2debeb23ab4715dd?family=DidoteTextW01-Italic');
+@import url('http://db.onlinewebfonts.com/c/c017c9efb81f32559dee68fa54edbde4?family=ReklameScriptW00-Medium');
+@import url('http://db.onlinewebfonts.com/c/562fa31bba08b3f71cb71257ddb880d5?family=Verdana');
+@import url('http://db.onlinewebfonts.com/c/952bab25f6798d6bb1937d67e9bee4dd?family=Sans');
+@import url('http://db.onlinewebfonts.com/c/592d7d249c34da18d3a6fea41e031cfe?family=BreeW01-ThinOblique');
 body {
     background-color: rgb(228, 228, 228);
     font-family: "Raleway", sans-serif;
+    margin: 0;
+}
+
+#navbar {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #67B521;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 5px 8px -5px #333;
+}
+
+#nav {
+    display: flex;
+    background-color: #67B521;
+    flex-direction: row;
+    position: sticky;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+#navbar a:hover {
+    color: yellow;
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#navbar li {
+    display: inline;
+    padding: 0 20px;
+}
+
+#menu {
+    min-width: 500px;
+}
+
+#logo,
+#menu,
+#signIn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px;
+    color: white;
+    font-size: 19px;
+}
+
+#loginBtn {
+    width: 165px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid white;
+}
+
+#loginBtn>a {
+    color: #67B521;
+    transition: 0.6s ease;
+    font-size: 1.2em;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+#loginBtn>a:hover {
+    color: rgba(255, 255, 0, 0.651) !important;
+}
+
+#signIn svg {
+    margin-top: -8px;
+    margin-left: 10px;
 }
 
 #quick-order {
