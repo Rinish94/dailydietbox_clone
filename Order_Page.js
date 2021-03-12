@@ -1,14 +1,18 @@
-window.onscroll = function() { myFunction() };
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
+// CartIcon updater starts here 
+let itemCount = document.querySelector('text')
+setInterval(() => {
+    if (localStorage.getItem('itemCount') != null) {
+        itemCount.innerHTML = localStorage.getItem('itemCount')
     } else {
-        navbar.classList.remove("sticky");
+        itemCount.innerHTML = 0
     }
-}
+}, 200)
+
+
+
+// CartIcon updater ends here 
+
+
 
 
 
@@ -523,7 +527,9 @@ milk_Options.forEach((ele) => {
 var cartAllData = []
 var para = document.createElement('p')
 var para1 = document.createElement('p')
+var count = 0
 document.getElementById('addToCart').addEventListener('click', () => {
+    count++
     var productName = document.querySelector('.productName').innerText
     var productPrice = document.querySelector('.productprice').innerText
     var cartDataObj = {}
@@ -582,7 +588,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
             canc.setAttribute('class', 'cancelCarttems')
             Oidiv.appendChild(canc)
             canc.addEventListener('click', () => {
-
+                count--
                 var [totalCartPrice, productprice] = subTotalPrice(event.target.parentElement)
                 if ((totalCartPrice - Math.floor(productprice * quantity)) <= 0) {
                     totalPrice.textContent = "INR " + 0
@@ -666,6 +672,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
             }
 
         });
+
         document.getElementById('viewPurchase').addEventListener('click', () => {
             cartDataObj.prdName = productName
             cartDataObj.prdPrice = productPrice
@@ -675,14 +682,17 @@ document.getElementById('addToCart').addEventListener('click', () => {
             cartDataObj.totalPrice = totalPrice.textContent
             cartAllData.push(cartDataObj)
             localStorage.setItem('allCartItems', JSON.stringify(cartAllData))
+            count = 0
+            localStorage.setItem('itemCount', count)
             window.location = "orderSummary.html";
         })
-
+        localStorage.setItem('itemCount', count)
     }
 
 
 
 })
+
 
 // tag2.addEventListener('click', () => {
 //     document.querySelector('.bg-modal').style.display = "flex"
@@ -695,6 +705,9 @@ document.querySelector('.close').addEventListener('click', () => {
 
 document.querySelector('.purchase-close').addEventListener('click', () => {
     document.querySelector('.purchase-modal').style.display = "none"
+})
+document.querySelector('.textClass').addEventListener('click', () => {
+    document.querySelector('.purchase-modal').style.display = "flex"
 })
 
 

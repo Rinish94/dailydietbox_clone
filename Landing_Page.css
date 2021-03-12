@@ -7,6 +7,8 @@
 @import url('http://db.onlinewebfonts.com/c/592d7d249c34da18d3a6fea41e031cfe?family=BreeW01-ThinOblique');
 body {
     margin: 0;
+    min-width: 1002px;
+    padding: 0;
 }
 
 #navbar {
@@ -17,6 +19,8 @@ body {
     justify-content: center;
     z-index: 2;
     box-shadow: 0 5px 8px -5px #333;
+    position: sticky;
+    top: 0;
 }
 
 #nav {
@@ -63,6 +67,7 @@ body {
     height: 45px;
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid white;
+    outline: none;
 }
 
 #loginBtn>a {
@@ -163,19 +168,6 @@ body {
 .fsectFont12 {
     font-size: 4.4rem;
 }
-
-/* sticky Navbar code starts here */
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.sticky+#firstSect {
-    padding-top: 80px;
-}
-/*Sticky navbar code ends here  */
 
 /* FirstSection Ends here */
 
@@ -320,29 +312,31 @@ body {
     margin: 0;
     padding: 0;
 }
+#sixthSect>div:nth-of-type(1){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-#sixthSect>h1 {
+#sixthSect h1 {
     font-family: "ReklameScriptW00-Medium";
     font-weight: normal;
     font-style: normal;
-    margin: auto;
-    padding: 0.4em 0;
-    width: fit-content;
+    padding:  0;
     font-size: 3em;
     color: white;
-    letter-spacing: 4px
+    letter-spacing: 4px;
+    margin: 10px;
 }
 
-#sixthSect>h3 {
+#sixthSect h3 {
+    display: block;
     font-family: "Verdana";
     font-weight: lighter;
-    margin: auto;
-    margin-top: -0.5em;
-    margin-bottom: 0.2em;
-    width: fit-content;
     font-size: 1.7em;
     color: white;
-    padding-bottom: 1em;
+    margin: 0;
+    padding-bottom: 0;
 }
 
 #sixthSect>div {
@@ -376,7 +370,6 @@ body {
 #sixthSect img {
     display: block;
     width: 100%;
-    height: auto;
 }
 
 .container {
@@ -385,11 +378,12 @@ body {
 
 #overlay1, #overlay2, #overlay3, #overlay4 {
     position: absolute;
-    top: 163px;
+    display: block;
+    top: 170px;
     transition: .5s ease;
     opacity: 0;
     text-align: center;
-    width: 207px;
+    width: 208px;
     padding: 20px 0 !important;
     margin: 0;
     background-color: rgba(255, 255, 255, 0.692);
@@ -407,14 +401,10 @@ body {
     stroke: #999;
 }
 
-.mealItem1:nth-of-type(2) {
-    position: relative;
-}
-
-.mealItem1:nth-of-type(2) div, .mealItem1:nth-of-type(4) div {
+.mealItem1:nth-of-type(2) div:nth-of-type(1), .mealItem1:nth-of-type(4) div:nth-of-type(1) {
     background-color: rgb(255, 115, 0);
     color: white;
-    padding: 10px !important;
+    padding: 10px ;
     position: absolute;
     z-index: 1;
 }
@@ -426,8 +416,12 @@ body {
     margin: 0;
     padding: 0;
 }
+#seventhSect>div:nth-of-type(1){
+    display: flex;
+    justify-content: center;
+}
 
-#seventhSect>h1 {
+#seventhSect>div>h1 {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 8px;
     margin: auto;
@@ -440,6 +434,7 @@ body {
     display: flex;
     justify-content: center;
     padding-bottom: 40px;
+    width: 100%;
 }
 
 .person {
@@ -639,10 +634,14 @@ body {
 #fifthSect {
     background-image: url('https://static.wixstatic.com/media/nsplsh_706845616571653535354d~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_1583,h_719,al_c,q_85,usm_0.66_1.00_0.01/nsplsh_706845616571653535354d~mv2_d_5184_3456_s_4_2.webp');
     display: flex;
+    /* min-width: fit-content; */
+    /* background-position: ; */
+    /* width: fit-content; */
     justify-content: center;
     line-height: 45px;
     color: white;
     text-align: center;
+    background-size: cover;
 }
 
 #fifthSect h1 {
@@ -656,13 +655,10 @@ body {
     text-align: center;
 }
 
-#fifthSect>div {
-    width: 50%;
-}
 
-#fifthSect>div:nth-of-type(2)>div {
+#fifthSect>div>div {
     background-color: #51a01fbe;
-    width: fit-content;
+    /* width: fit-content; */
     margin-top: 70px;
     margin-bottom: 40px;
     padding: 15px 50px;
@@ -712,3 +708,157 @@ body {
     background-color: #BADA55;
 }
 /* FifthSection Ends here */
+
+
+/* CHAT BOX starts here */
+.botcont {
+    position: fixed;
+    width: 100%;
+  }
+  .botDiv {
+    background-color: rgb(129, 193, 71);
+    width: 350px;
+    float: right;
+    margin: 630px 30px;
+    color: #fff;
+    font-size: small;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+  }
+  .box {
+    position: absolute;
+    width: 450px;
+    height: 825px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 1px solid #303030; */
+    box-shadow: 5px 5px 5px 20px rgb(129, 193, 71);
+    border-radius: 0px;
+  }
+  .top {
+    width: 100%;
+    height: 80px;
+    margin: auto;
+    background: rgb(129, 193, 71);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .top h3 {
+    color: #fff;
+    margin: auto;
+    font-size: 20px;
+    text-align: left;
+    /* padding-left: 20px; */
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .mid {
+    width: 100%;
+    height: 360px;
+    background: white;
+    margin-top: -18px;
+  }
+  .mid .chat {
+    width: 100%;
+    padding-top: 0px;
+  }
+  .mid .chat h2 {
+    margin: 0;
+    font-size: 30px;
+    color: #000;
+    padding: 30px 20px;
+  }
+  .mid .chat p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(68, 67, 67);
+    background: rgb(192, 255, 133);
+    padding: 50px 20px;
+    letter-spacing: 0.04em;
+  }
+  .input {
+    width: 100%;
+    height: 79px;
+    overflow: hidden;
+    /* background: #090e11; */
+  }
+  .input input {
+    width: 100%;
+    height: 120px;
+    font-size: 30px;
+    outline: none;
+    border: none;
+    padding-left: 30px;
+    padding-top: 0;
+    font-family: cursive;
+    background: #fffefe;
+    color: grey;
+    border: 1px solid grey;
+  }
+  .modal-box {
+    position: absolute;
+    width: 22%;
+    height: 520px;
+    top: 25.5%;
+    left: 80%;
+    background-color: rgb(252, 252, 252);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s;
+  }
+  .bg-on {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .modal_cont {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    height: 95%;
+    align-items: right;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .modal-close_icon {
+    position: relative;
+    top: -120px;
+    left: 220px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+  }
+  .bot {
+    border-radius: 3%;
+    width: 100%;
+    font-weight: 100;
+  }
+  .modelraw {
+    border-radius: 70%;
+    margin: auto;
+    padding-left: 1%;
+  }
+  
+  .smilye {
+    width: 30px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 50%;
+  }
+  .arrow {
+    margin: 20px 20px 10px;
+    width: 30px;
+    height: 20px;
+    border-radius: 50%;
+  }
+/* CHAT BOX ends here */

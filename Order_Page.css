@@ -11,6 +11,9 @@ body {
     margin: 0;
 }
 
+
+/* Navbar starts here */
+
 #navbar {
     font-family: 'Open Sans', Arial, sans-serif;
     background-color: #67B521;
@@ -19,6 +22,8 @@ body {
     justify-content: center;
     z-index: 2;
     box-shadow: 0 5px 8px -5px #333;
+    position: sticky;
+    top: 0;
 }
 
 #nav {
@@ -67,6 +72,7 @@ body {
     height: 45px;
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid white;
+    outline: none;
 }
 
 #loginBtn>a {
@@ -84,6 +90,73 @@ body {
     margin-top: -8px;
     margin-left: 10px;
 }
+
+
+/* Navbar ends here */
+
+
+/* For Footer */
+
+#footer {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #E8E8E8;
+    background-image: url('https://static.parastorage.com/services/editor-elements/dist/media/ironpatern.6522082f.png');
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 -5px 25px -5px rgba(88, 87, 87, 0.7);
+}
+
+.footItem ul {
+    list-style: none;
+    padding: 10px 110px 0px 0;
+    font-size: 0.83rem;
+    line-height: 18px;
+}
+
+.footItem span {
+    color: #67B521;
+}
+
+.footItem button {
+    outline: none;
+    transition: 0.6s ease;
+    padding: 0.6em 1.5em;
+    font-size: 1.0008rem;
+    color: #67B521;
+    border: 1px solid #67B521;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.footItem button:hover {
+    background-color: #67B521;
+    color: white;
+}
+
+.footIcons>li {
+    display: inline;
+}
+
+#iconSection ul {
+    padding-right: 0px;
+}
+
+#spGap {
+    margin: 0px 20px 0 10px;
+}
+
+#footer a {
+    text-decoration: none;
+    color: black;
+}
+
+#footer a:hover {
+    color: #67B521;
+}
+
+
+/* Footer ends here  */
 
 #quick-order {
     width: 980px;
@@ -467,6 +540,7 @@ html .ui-button.ui-state-disabled:active {
     justify-content: center;
     align-items: center;
     display: none;
+    z-index: 5;
 }
 
 .modal-content {
@@ -558,6 +632,7 @@ html .ui-button.ui-state-disabled:active {
     display: flex;
     justify-content: right;
     align-items: center;
+    z-index: 5;
     display: none;
 }
 

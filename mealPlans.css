@@ -1,0 +1,312 @@
+@import url('http://db.onlinewebfonts.com/c/3591a95e9abd510d170b0ba4077e70d3?family=NimbusSanTW01Con');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #E8E8E8;
+}
+
+#navbar {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #67B521;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 5px 8px -5px #333;
+    position: sticky;
+    top: 0;
+    min-width: 980px
+}
+
+#nav {
+    display: flex;
+    background-color: #67B521;
+    flex-direction: row;
+    position: sticky;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+#navbar a:hover {
+    color: yellow;
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#navbar li {
+    display: inline;
+    padding: 0 20px;
+}
+
+#menu {
+    min-width: 500px;
+}
+
+#logo, #menu, #signIn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px;
+    color: white;
+    font-size: 19px;
+}
+
+#loginBtn {
+    width: 165px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid white;
+    outline: none;
+}
+
+#loginBtn>a {
+    color: #67B521;
+    transition: 0.6s ease;
+    font-size: 1.2em;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+#loginBtn>a:hover {
+    color: rgba(255, 255, 0, 0.651) !important;
+}
+
+#signIn svg {
+    margin-top: -8px;
+    margin-left: 10px;
+}
+
+#footer {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #E8E8E8;
+    background-image: url('https://static.parastorage.com/services/editor-elements/dist/media/ironpatern.6522082f.png');
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 -5px 25px -5px rgba(88, 87, 87, 0.7);
+    min-width: 980px;
+}
+
+.footItem ul {
+    list-style: none;
+    padding: 10px 110px 0px 0;
+    font-size: 0.83rem;
+    line-height: 18px;
+}
+
+.footItem span {
+    color: #67B521;
+}
+
+.footItem button {
+    outline: none;
+    transition: 0.6s ease;
+    padding: 0.6em 1.5em;
+    font-size: 1.0008rem;
+    color: #67B521;
+    border: 1px solid #67B521;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.footItem button:hover {
+    background-color: #67B521;
+    color: white;
+}
+
+.footIcons>li {
+    display: inline;
+}
+
+#iconSection ul {
+    padding-right: 0px;
+}
+
+#spGap {
+    margin: 0px 20px 0 10px;
+}
+
+#footer a {
+    text-decoration: none;
+    color: black;
+}
+
+#footer a:hover {
+    color: #67B521;
+}
+
+#mainContainer {
+    font-family: "NimbusSanTW01Con";
+    width: 980px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+}
+
+#mainContainer>div:nth-of-type(1) {
+    height: 130px;
+    background-color: white;
+    width: 100%;
+}
+
+#mainContainer>div:nth-of-type(2) {
+    background-image: url('https://static.wixstatic.com/media/d2e213500d2b417689e3fc6b9ed1475c.jpg/v1/crop/x_0,y_1535,w_6016,h_2069/fill/w_980,h_338,al_c,q_80,usm_0.66_1.00_0.01/d2e213500d2b417689e3fc6b9ed1475c.webp');
+    background-size: cover;
+    height: 338px;
+    width: 100%;
+    position: relative;
+}
+
+#mainContainer>div:nth-of-type(2)>div {
+    background-color: rgba(255, 255, 255, 0.920);
+    position: absolute;
+    color: rgb(170, 166, 166);
+    font-weight: lighter;
+    font-size: 1.35em;
+    width: 310px;
+    padding: 0 30px;
+    right: 0px;
+}
+
+#mainContainer p:nth-of-type(1), #mainContainer p:nth-of-type(3) {
+    color: #67B521;
+}
+
+#mainContainer p:nth-of-type(3) {
+    font-size: 1.4em;
+}
+.boxShade{
+
+    box-shadow: 0 0 12px #333;
+
+}
+#arrow {
+    transform: rotate(180deg);
+    height: 32px;
+    --stroke-width: 3;
+    --fill-opacity: 1;
+    --stroke: #81C147;
+    --stroke-opacity: 1;
+    --fill: #81C147;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    fill: var(--fill);
+    fill-opacity: var(--fill-opacity);
+    stroke: var(--stroke);
+    stroke-opacity: var(--stroke-opacity);
+    stroke-width: var(--stroke-width);
+    margin: auto;
+}
+
+#mainContainer>div:nth-of-type(3) {
+    background-color: #333333;
+}
+
+#mainContainer>div:nth-of-type(3)>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.upperDiv {
+    background-color: #E8E8E8;
+}
+
+.lowerDiv {
+    background-color: white;
+    max-width: 227px;
+    min-height: 285px;
+}
+
+.lowerDiv ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.boxes {
+    box-sizing: border-box;
+    margin: 10px 15px;
+}
+
+.boxes>div {
+    padding: 35px;
+}
+
+h4 {
+    color: #82C149;
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: lighter;
+}
+
+h1 {
+    color: white;
+    font-weight: normal;
+    font-size: 3em;
+    margin: 55px 0;
+}
+
+#mainContainer button {
+    font-size: 1.6em;
+    background-color: #82C149;
+    outline: none;
+    transition: 0.6s ease;
+    border: transparent;
+    color: white;
+    font-family: "NimbusSanTW01Con";
+    padding: 0.5em 2.8em;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#mainContainer button:hover {
+    background-color: white;
+    color: #82C149;
+}
+
+#mainContainer li:not(.noLine):after {
+    content: "";
+    display: block;
+    margin-top: 5px;
+    height: 1px;
+    background-color: rgb(170, 166, 166);
+}
+
+#mainContainer li {
+    font-size: 1.1em;
+    color: #4C4C4C;
+    padding: 4px 0;
+}
+
+.rate {
+    font-size: 4.6em;
+    margin: 0;
+    padding: 0 0 17px 0;
+}
+
+.rupee {
+    /* display: inline; */
+    text-align: left !important;
+    margin-bottom: -20px;
+    padding: 0;
+    font-size: 1.2em;
+    color: black !important;
+}
+
+#lastCom {
+    color: white;
+    font-size: 0.9em;
+    padding: 40px 150px;
+}
+.hideP{
+    opacity: 0;
+}
