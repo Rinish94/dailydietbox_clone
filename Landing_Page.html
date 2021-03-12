@@ -64,7 +64,7 @@
                 <p id="del" style="color: red; cursor: pointer;">delete(for demo)</p> -->
             </div>
             <div class="fSectItem" id="firstSect12">
-                
+
                 <span id="fsectFont1">
                     GET <br>
                     <span class="fsectFont12">HEALTHY</span> <br> <span>&</span> <span class="fsectFont12">FIT</span>
@@ -86,7 +86,6 @@
         <button onclick="document.location='Landing_Page.html'">Order Online ></button>
 
     </div>
-
 
     <div id="thirdSect">
 
@@ -155,12 +154,11 @@
 
 
     <div id="fifthSect">
-        <div></div>
         <div>
             <div>
                 <h1>Why Us?</h1>
                 <ul>
-                    <li >Freshly Sourced 100%
+                    <li>Freshly Sourced 100%
                         <span>Organic</span> Ingredients
                     </li>
                     <li>Freshly Cooked <span>Healthy & Delicious</span> Meals </li>
@@ -180,9 +178,11 @@
     </div>
 
     <div id="sixthSect">
+        <div>
+            <h1>Meal Plans</h1>
+            <h3>Slide to choose a Monthly Plan</h3>
+        </div>
 
-        <h1>Meal Plans</h1>
-        <h3>Slide to choose a Monthly Plan</h3>
         <div>
             <div id="mealContain">
                 <div class="mealItem1">
@@ -200,11 +200,10 @@
                         </div>
                         <img src="https://static.wixstatic.com/media/dda10aa3539a4e608e1484381662b288.jpg/v1/fill/w_207,h_207,al_c,q_80,usm_0.66_1.00_0.01/dda10aa3539a4e608e1484381662b288.webp"
                             alt="">
-                        <div id="overlay1">Quick View</div>
+                        <div  id="overlay1">Quick View</div>
                         <p>Demo Meal</p>
                         <p>₹500.00</p>
                     </a>
-
                 </div>
                 <div class="mealItem1">
                     <a class="container" href="#">
@@ -255,7 +254,9 @@
     </div>
 
     <div id="seventhSect">
-        <h1>WHAT&nbsp;PEOPLE&nbsp;SAY</h1>
+        <div>
+            <h1>WHAT&nbsp;PEOPLE&nbsp;SAY</h1>
+        </div>
         <div id="quotes">
             <div class="person">
                 <div>
@@ -344,8 +345,6 @@
                 </div>
 
             </div>
-
-
         </div>
 
     </div>
@@ -356,9 +355,6 @@
             <button onclick="document.location='Landing_Page.html'">Try A Demo</button>
         </div>
     </div>
-
-
-
     <div id="footer">
         <div class="footItem">
             <ul>
@@ -426,6 +422,44 @@
             </ul>
         </div>
     </div>
+
+<!-- CHAT BOX starts here -->
+
+    <div class="botcont">
+        <div class="botDiv">
+            <img class="smilye"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ALbMP6l8OoX7MtRnkc8IXlUbyAOMn0ELww&usqp=CAU">
+            <h2 class="bot" onclick="">Let's Chat!</h2>
+            <img class="arrow" onclick=""
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-d-vrdVyapCVY8Sv8GrEC_TK_PG90hofwSg&usqp=CAU">
+
+
+            <div class="modal-box">
+                <div class="modal_cont">
+
+                    <div class="box">
+                        <div class="top">
+                            <h3>Let's Chat</h3>
+                        </div>
+                        <div class="mid">
+                            <div class="chat">
+                                <p id="chatLog"> Hey there! Before we chat, please Sign up so we can easily get in
+                                    touch. </p>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <input type="text" id="userBox" onkeydown="if(event.keyCode == 13){ talk()}"
+                                placeholder="Type your Question">
+                        </div>
+                    </div>
+                    <span class="modal-close_icon">X</span>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- CHAT BOX ends here -->
+
+
 
 
 
