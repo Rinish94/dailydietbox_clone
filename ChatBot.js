@@ -57,6 +57,7 @@ function sendMsg() {
     div.append(p);
     div.style.textAlign = "right";
     document.getElementById("chatDisplay").append(div);
+    document.getElementById("chatBotTxt").value = "";
     setTimeout(() => {
       botSendMsg(chatBotTxt);
     }, 1000);
