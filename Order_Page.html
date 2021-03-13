@@ -1,77 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="Order_Page.css" />
-</head>
 
-<body>
+    <style>
+      .botcont {
+        position: fixed;
+        bottom: 5px;
+        right: 10px;
+      }
+      .botDiv {
+        display: flex;
+        width: 366px;
+        height: 60px;
+        border-radius: 5px;
+        background-color: rgb(129, 193, 71);
+        font-size: 20px;
+        color: white;
+      }
+      .fa-smile-beam {
+        font-size: 35px;
+        margin: 10px;
+        margin-left: 20px;
+      }
+      .fa-chevron-up,
+      .fa-chevron-down {
+        margin: 20px;
+      }
+      .chatBotDisplay {
+        width: 346px;
+        height: 400px;
+        background-image: url("images/chatBot-Background.jpg");
+        background-size: 366px 400px;
+        border: 1px solid lightgray;
+        display: none;
+        overflow: auto;
+        padding: 10px;
+      }
+      .chatBotInput {
+        width: 366px;
+        border: none;
+        display: none;
+        border-bottom: 1px solid lightgray;
+        border-left: 1px solid lightgray;
+        border-right: 1px solid lightgray;
+        background-color: white;
+      }
+      .chatBotInput > input {
+        width: 320px;
+        height: 40px;
+        border: none;
+        font-size: 20px;
+      }
+      .chatBotInput > input:focus {
+        outline: none;
+      }
+      .chatBotInput > i {
+        font-size: 28px;
+        margin-top: 5px;
+        border: none;
+      }
+      .chatBotDisplay > div > p {
+        padding: 15px;
+        background-color: lightgreen;
+        color: white;
+        display: inline-block;
+        max-width: 200px;
+        border-radius: 5px;
+        margin: 0;
+      }
+    </style>
+  </head>
 
+  <body>
     <div id="navbar">
-        <div id="nav">
-            <div class="nItem" id="logo">
-                <a href="Landing_Page.html">
-                    <img src="https://static.wixstatic.com/media/7d8e8d_a9425b8a1c8c4997a258c737bf967ce8~mv2.png/v1/fill/w_59,h_68,al_c,q_85,usm_0.66_1.00_0.01/7d8e8d_a9425b8a1c8c4997a258c737bf967ce8~mv2.webp" alt="">
-                </a>
+      <div id="nav">
+        <div class="nItem" id="logo">
+          <a href="Landing_Page.html">
+            <img
+              src="https://static.wixstatic.com/media/7d8e8d_a9425b8a1c8c4997a258c737bf967ce8~mv2.png/v1/fill/w_59,h_68,al_c,q_85,usm_0.66_1.00_0.01/7d8e8d_a9425b8a1c8c4997a258c737bf967ce8~mv2.webp"
+              alt=""
+            />
+          </a>
 
-                <span>DAILY DIET BOXES</span>
-            </div>
-            <div class="nItem" id="menu">
-                <ul>
-                    <a href="Landing_Page.html">
-                        <li>Home</li>
-                    </a>
-                    <a href="https://www.dailydietboxes.com/consult">
-                        <li>Consult</li>
-                    </a>
-                    <a href="Order_Page.html">
-                        <li>Order Now</li>
-                    </a>
-                    <a href="mealPlans.html">
-                        <li>Meal Plans</li>
-                    </a>
-                </ul>
-            </div>
-            <div class="nItem" id="signIn">
-                <button id="loginBtn"><a href="Login_Page.html">Login /Sign Up</a> </button>
-
-                <svg width="47px" viewBox="163.7 331.4 267.8 178.8" preserveAspectRatio="xMinYMax meet" fill="white" class="textClass">
-                        <path
-                            d="M243.4 425.1l-29.7-47.9 -9.1 5.6 26.2 42.2h-67.1v10.7h3l19.1 70.2c0.6 2.4 3 4.2 5.4 4.2h97c2.4 0 4.2-1.8 4.2-3.6l19.6-70.8h4.2v-10.7H243.4zM221.4 473.3v10.7h-10.7V473.3H221.4zM210.7 461.4v-10.7h10.7v10.7H210.7zM244.7 473.3v10.7h-10.7V473.3H244.7zM233.9 461.4v-10.7h10.7v10.7H233.9zM257.8 484V473.3h10.7v10.7H257.8zM268.5 461.4h-10.7v-10.7h10.7V461.4z">
-                        </path>
-                        <path fill="rgb(255 97 97)"
-                            d="M383.4 334c35.7 10.7 56 47.6 45.2 83.3 -10.7 35.7-47.6 56-83.3 45.2 -35.7-10.7-56-47.6-45.2-83.3C310.7 344.2 348.2 323.9 383.4 334z">
-                        </path>
-                        <text font-size="80px" fill="white" x="365" y="370" dy=".70em" text-anchor="middle" >0</text>
-                </svg>
-
-            </div>
+          <span>DAILY DIET BOXES</span>
         </div>
+        <div class="nItem" id="menu">
+          <ul>
+            <a href="Landing_Page.html">
+              <li>Home</li>
+            </a>
+            <a href="https://www.dailydietboxes.com/consult">
+              <li>Consult</li>
+            </a>
+            <a href="Order_Page.html">
+              <li>Order Now</li>
+            </a>
+            <a href="mealPlans.html">
+              <li>Meal Plans</li>
+            </a>
+          </ul>
+        </div>
+        <div class="nItem" id="signIn">
+          <button id="loginBtn">
+            <a href="Login_Page.html">Login /Sign Up</a>
+          </button>
+
+          <svg
+            width="47px"
+            viewBox="163.7 331.4 267.8 178.8"
+            preserveAspectRatio="xMinYMax meet"
+            fill="white"
+            class="textClass"
+          >
+            <path
+              d="M243.4 425.1l-29.7-47.9 -9.1 5.6 26.2 42.2h-67.1v10.7h3l19.1 70.2c0.6 2.4 3 4.2 5.4 4.2h97c2.4 0 4.2-1.8 4.2-3.6l19.6-70.8h4.2v-10.7H243.4zM221.4 473.3v10.7h-10.7V473.3H221.4zM210.7 461.4v-10.7h10.7v10.7H210.7zM244.7 473.3v10.7h-10.7V473.3H244.7zM233.9 461.4v-10.7h10.7v10.7H233.9zM257.8 484V473.3h10.7v10.7H257.8zM268.5 461.4h-10.7v-10.7h10.7V461.4z"
+            ></path>
+            <path
+              fill="rgb(255 97 97)"
+              d="M383.4 334c35.7 10.7 56 47.6 45.2 83.3 -10.7 35.7-47.6 56-83.3 45.2 -35.7-10.7-56-47.6-45.2-83.3C310.7 344.2 348.2 323.9 383.4 334z"
+            ></path>
+            <text
+              font-size="80px"
+              fill="white"
+              x="365"
+              y="370"
+              dy=".70em"
+              text-anchor="middle"
+            >
+              0
+            </text>
+          </svg>
+        </div>
+      </div>
     </div>
     <div id="OrderNowItems">
-        <div class="heading">
-            <div style="display: flex">
-                <hr />
-                <span class="dot"></span>
-            </div>
-            <h2>Quick Order</h2>
-            <div style="display: flex">
-                <span class="dot"></span>
-                <hr />
-            </div>
+      <div class="heading">
+        <div style="display: flex">
+          <hr />
+          <span class="dot"></span>
         </div>
-        <div id="quick-order">
-            <div class="option">
-                <h2>Filter by</h2>
-                <select id="sort">
+        <h2>Quick Order</h2>
+        <div style="display: flex">
+          <span class="dot"></span>
+          <hr />
+        </div>
+      </div>
+      <div id="quick-order">
+        <div class="option">
+          <h2>Filter by</h2>
+          <select id="sort">
             <option value="orignal">Sort By</option>
             <option value="newest">Newest</option>
             <option value="lowToHigh">Price (Low to High)</option>
@@ -79,181 +174,201 @@
             <option value="nameAZ">Name (A - Z)</option>
             <option value="nameZA">Name (Z - A)</option>
           </select>
-            </div>
-            <div class="items-container">
-                <div class="filter-list">
-                    <div id="price" class="list-item border-top">
-                        <div class="list-heading">
-                            <p>Price</p>
-                            <i class="fa fa-plus"></i>
-                        </div>
-                        <div class="list-body">
-                            <div id="slider-range"></div>
-                            <p>
-                                <input type="text" id="amount" readonly style="border: 0; color: black; font-weight: bold" />
-                            </p>
-                        </div>
-                    </div>
-                    <div class="list-item">
-                        <div class="list-heading">
-                            <p>Milk Options</p>
-                            <i class="fa fa-plus"></i>
-                        </div>
-                        <div id="milk" class="list-body">
-                            <div class="outer-border">
-                                <div class="circle white"></div>
-                            </div>
-
-                            <div class="outer-border">
-                                <div class="circle yellow"></div>
-                            </div>
-
-                            <div class="outer-border">
-                                <div class="circle green"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-item">
-                        <div class="list-heading">
-                            <p>Seed Options</p>
-                            <i class="fa fa-plus"></i>
-                        </div>
-
-                        <div id="seed-option" class="list-body">
-                            <div class="outer-border">
-                                <div class="circle gray"></div>
-                            </div>
-
-                            <div class="outer-border">
-                                <div class="circle maroon"></div>
-                            </div>
-
-                            <div class="outer-border">
-                                <div class="circle green"></div>
-                            </div>
-                            <div class="outer-border">
-                                <div class="circle yellow"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="seeds" class="list-item">
-                        <div class="list-heading">
-                            <p>Seeds</p>
-                            <i class="fa fa-plus"></i>
-                        </div>
-                        <div id="seed" class="list-body">
-                            <div class="outer-border">
-                                <div class="circle gray"></div>
-                            </div>
-
-                            <div class="outer-border">
-                                <div class="circle maroon"></div>
-                            </div>
-
-                            <div class="outer-border">
-                                <div class="circle green"></div>
-                            </div>
-                            <div class="outer-border">
-                                <div class="circle yellow"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-item">
-                        <div class="list-heading">
-                            <p>Veg / Non-Veg</p>
-                            <i class="fa fa-plus"></i>
-                        </div>
-
-                        <div id="veg-non-veg" class="list-body">
-                            <div class="outer-border">
-                                <div class="circle red"></div>
-                            </div>
-
-                            <div class="outer-border">
-                                <div class="circle yellow"></div>
-                            </div>
-
-                            <div class="outer-border">
-                                <div class="circle green"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="bread" class="list-item">
-                        <div class="list-heading">
-                            <p>Bread Options</p>
-                            <i class="fa fa-plus"></i>
-                        </div>
-                        <div class="list-body">
-                            <div><input type="checkbox" /> Brown Bread</div>
-                            <div><input type="checkbox" /> Milk Bread</div>
-                            <div><input type="checkbox" /> Multigrane</div>
-                            <div><input type="checkbox" /> Whole Wheat</div>
-                        </div>
-                    </div>
-                    <div id="clear" class="list-item">
-                        <div class="list-heading">
-                            <p>Clear Filter</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="products" class="items"></div>
-            </div>
         </div>
+        <div class="items-container">
+          <div class="filter-list">
+            <div id="price" class="list-item border-top">
+              <div class="list-heading">
+                <p>Price</p>
+                <i class="fa fa-plus"></i>
+              </div>
+              <div class="list-body">
+                <div id="slider-range"></div>
+                <p>
+                  <input
+                    type="text"
+                    id="amount"
+                    readonly
+                    style="border: 0; color: black; font-weight: bold"
+                  />
+                </p>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="list-heading">
+                <p>Milk Options</p>
+                <i class="fa fa-plus"></i>
+              </div>
+              <div id="milk" class="list-body">
+                <div class="outer-border">
+                  <div class="circle white"></div>
+                </div>
+
+                <div class="outer-border">
+                  <div class="circle yellow"></div>
+                </div>
+
+                <div class="outer-border">
+                  <div class="circle green"></div>
+                </div>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="list-heading">
+                <p>Seed Options</p>
+                <i class="fa fa-plus"></i>
+              </div>
+
+              <div id="seed-option" class="list-body">
+                <div class="outer-border">
+                  <div class="circle gray"></div>
+                </div>
+
+                <div class="outer-border">
+                  <div class="circle maroon"></div>
+                </div>
+
+                <div class="outer-border">
+                  <div class="circle green"></div>
+                </div>
+                <div class="outer-border">
+                  <div class="circle yellow"></div>
+                </div>
+              </div>
+            </div>
+            <div id="seeds" class="list-item">
+              <div class="list-heading">
+                <p>Seeds</p>
+                <i class="fa fa-plus"></i>
+              </div>
+              <div id="seed" class="list-body">
+                <div class="outer-border">
+                  <div class="circle gray"></div>
+                </div>
+
+                <div class="outer-border">
+                  <div class="circle maroon"></div>
+                </div>
+
+                <div class="outer-border">
+                  <div class="circle green"></div>
+                </div>
+                <div class="outer-border">
+                  <div class="circle yellow"></div>
+                </div>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="list-heading">
+                <p>Veg / Non-Veg</p>
+                <i class="fa fa-plus"></i>
+              </div>
+
+              <div id="veg-non-veg" class="list-body">
+                <div class="outer-border">
+                  <div class="circle red"></div>
+                </div>
+
+                <div class="outer-border">
+                  <div class="circle yellow"></div>
+                </div>
+
+                <div class="outer-border">
+                  <div class="circle green"></div>
+                </div>
+              </div>
+            </div>
+            <div id="bread" class="list-item">
+              <div class="list-heading">
+                <p>Bread Options</p>
+                <i class="fa fa-plus"></i>
+              </div>
+              <div class="list-body">
+                <div><input type="checkbox" /> Brown Bread</div>
+                <div><input type="checkbox" /> Milk Bread</div>
+                <div><input type="checkbox" /> Multigrane</div>
+                <div><input type="checkbox" /> Whole Wheat</div>
+              </div>
+            </div>
+            <div id="clear" class="list-item">
+              <div class="list-heading">
+                <p>Clear Filter</p>
+              </div>
+            </div>
+          </div>
+          <div id="products" class="items"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Modal Popup -->
     <div class="bg-modal">
-        <div class="modal-content">
-            <div class="close">+</div>
-            <div class="cartPopUp">
-                <div id="imageCont">
-                    <img alt=" Product image" class="prdImage">
+      <div class="modal-content">
+        <div class="close">+</div>
+        <div class="cartPopUp">
+          <div id="imageCont">
+            <img alt=" Product image" class="prdImage" />
+          </div>
+          <div id="choiceCont">
+            <div>
+              <div style="margin-bottom: 20px">
+                <div
+                  class="productName"
+                  style="color: #81c147; font-size: 2em; font-weight: 600"
+                >
+                  #
                 </div>
-                <div id="choiceCont">
-                    <div>
-                        <div style="margin-bottom:20px; ">
-                            <div class="productName" style="color:#81C147;font-size:2.00em;font-weight:600; ">#</div>
-                            <div class="productprice" style="color:#81C147;font-size:1.5em;font-family:sans-serif;">INR #</div>
-                        </div>
-                        <div style="margin-bottom:20px;" class="milk-options">
-                            <p class="milkOptions" style="font-size:12px;color:grey;">Milk Options:</p>
-                            <div class="options">
-                                <div style="background:white;" class="colorOptions wh"></div>
-                                <div style="background:yellow;" class="colorOptions yl"></div>
-                                <div style="background:green;" class="colorOptions gr"></div>
-                            </div>
-
-                        </div>
-                        <div style="margin-bottom:20px;">
-                            <p style="font-size:12px;color:grey;">What not to add? (optional)</p>
-                            <input type="text" maxlength="20" id="notToAdd">
-                        </div>
-                        <div>
-                            <p style="font-size:12px;color:grey;">Quantity</p>
-                            <input type="number" id="quantity" value="1">
-                        </div>
-                        <div id="addToCart">Add To Cart</div>
-                    </div>
+                <div
+                  class="productprice"
+                  style="
+                    color: #81c147;
+                    font-size: 1.5em;
+                    font-family: sans-serif;
+                  "
+                >
+                  INR #
                 </div>
+              </div>
+              <div style="margin-bottom: 20px" class="milk-options">
+                <p class="milkOptions" style="font-size: 12px; color: grey">
+                  Milk Options:
+                </p>
+                <div class="options">
+                  <div style="background: white" class="colorOptions wh"></div>
+                  <div style="background: yellow" class="colorOptions yl"></div>
+                  <div style="background: green" class="colorOptions gr"></div>
+                </div>
+              </div>
+              <div style="margin-bottom: 20px">
+                <p style="font-size: 12px; color: grey">
+                  What not to add? (optional)
+                </p>
+                <input type="text" maxlength="20" id="notToAdd" />
+              </div>
+              <div>
+                <p style="font-size: 12px; color: grey">Quantity</p>
+                <input type="number" id="quantity" value="1" />
+              </div>
+              <div id="addToCart">Add To Cart</div>
             </div>
-
+          </div>
         </div>
+      </div>
     </div>
     <!--Modal -->
 
-
     <!-- Purchase Popup -->
     <div class="purchase-modal">
-        <div class="purchase-content">
-            <div class="plans">
-                <div class="myPlans">
-                    <div class="purchase-close">></div>
-                    <p class="plansText">My Plans</p>
-                </div>
-            </div>
-            <div class="allItems">
-                <div class="cartItems">
-                    <!-- <div>
+      <div class="purchase-content">
+        <div class="plans">
+          <div class="myPlans">
+            <div class="purchase-close">></div>
+            <p class="plansText">My Plans</p>
+          </div>
+        </div>
+        <div class="allItems">
+          <div class="cartItems">
+            <!-- <div>
                         <div class="cancelCarttems">+</div>
                         <div class="imgDiv">
                             <img src="" alt="">
@@ -269,93 +384,110 @@
                         </div>
 
                     </div> -->
-                </div>
-            </div>
-            <div class="subtotal">
-                <div>
-                    <div>Subtotal</div>
-                    <div class="totalPrice">INR 0</div>
-                </div>
-
-            </div>
-
-            <div class="plans vpurchase">
-                <div id="viewPurchase">View Purchase</div>
-            </div>
-
+          </div>
         </div>
+        <div class="subtotal">
+          <div>
+            <div>Subtotal</div>
+            <div class="totalPrice">INR 0</div>
+          </div>
+        </div>
+
+        <div class="plans vpurchase">
+          <div id="viewPurchase">View Purchase</div>
+        </div>
+      </div>
     </div>
     <div id="footer">
-        <div class="footItem">
-            <ul>
-                <li><span> Daily&nbsp;Diet&nbsp;Boxes</span></li>
-                <br>
-                <li></li>
-                <li><a href="#">Success Stories</a> </li>
-                <li><a href="#"> Members</a></li>
-                <li><a href="#"> How It Works</a></li>
+      <div class="footItem">
+        <ul>
+          <li><span> Daily&nbsp;Diet&nbsp;Boxes</span></li>
+          <br />
+          <li></li>
+          <li><a href="#">Success Stories</a></li>
+          <li><a href="#"> Members</a></li>
+          <li><a href="#"> How It Works</a></li>
+        </ul>
+      </div>
+      <div class="footItem">
+        <ul>
+          <li><span>Our&nbsp;Company</span></li>
+          <br />
+          <li></li>
+          <li><a href="#"> About Us</a></li>
+          <li><a href="#"> Jobs</a></li>
+          <li><a href="#"> Press</a></li>
+        </ul>
+      </div>
+      <div class="footItem">
+        <ul>
+          <li><span>Help Center</span></li>
+          <br />
+          <!-- <li></li> -->
+          <li><a href="#"> FAQs</a></li>
+          <li><a href="#"> Help</a></li>
+          <li><a href="#"> Contact Us</a></li>
+          <li></li>
+          <br />
+          <li>©&nbsp;2023&nbsp;by&nbsp;DailyDietBoxes | India</li>
+        </ul>
+      </div>
+      <div class="footItem" id="iconSection">
+        <ul style="text-align: center">
+          <li>
+            <button onclick="document.location='Landing_Page.html'">
+              Download Our App
+            </button>
+          </li>
+          <br />
+          <li>
+            <ul class="footIcons">
+              <li>
+                <a href="https://www.instagram.com/dailydietboxes"
+                  ><img
+                    src="https://static.wixstatic.com/media/01c3aff52f2a4dffa526d7a9843d46ea.png/v1/fill/w_29,h_29,al_c,q_85,usm_0.66_1.00_0.01/01c3aff52f2a4dffa526d7a9843d46ea.webp"
+                    alt=""
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/dailydietboxes"
+                  ><img
+                    src="https://static.wixstatic.com/media/0fdef751204647a3bbd7eaa2827ed4f9.png/v1/fill/w_29,h_29,al_c,q_85,usm_0.66_1.00_0.01/0fdef751204647a3bbd7eaa2827ed4f9.webp"
+                    alt=""
+                  />
+                </a>
+              </li>
             </ul>
-        </div>
-        <div class="footItem">
-            <ul>
-                <li><span>Our&nbsp;Company</span> </li>
-                <br>
-                <li></li>
-                <li><a href="#"> About Us</a></li>
-                <li><a href="#"> Jobs</a></li>
-                <li><a href="#"> Press</a></li>
+          </li>
+          <br />
+          <li>
+            <ul class="footIcons">
+              <li id="spGap"><a href="#">Privacy&nbsp;Policy</a></li>
+              <li><a href="#"> Terms&nbsp;&&nbsp;Conditions </a></li>
             </ul>
-
-        </div>
-        <div class="footItem">
-            <ul>
-                <li><span>Help Center</span> </li>
-                <br>
-                <!-- <li></li> -->
-                <li><a href="#"> FAQs</a></li>
-                <li><a href="#"> Help</a></li>
-                <li><a href="#"> Contact Us</a></li>
-                <li></li>
-                <br>
-                <li>©&nbsp;2023&nbsp;by&nbsp;DailyDietBoxes | India</li>
-            </ul>
-
-        </div>
-        <div class="footItem" id="iconSection">
-            <ul style="text-align: center;">
-                <li>
-                    <button onclick="document.location='Landing_Page.html'">Download Our App</button>
-
-                </li>
-                <br>
-                <li>
-                    <ul class="footIcons">
-                        <li>
-                            <a href="https://www.instagram.com/dailydietboxes"><img src="https://static.wixstatic.com/media/01c3aff52f2a4dffa526d7a9843d46ea.png/v1/fill/w_29,h_29,al_c,q_85,usm_0.66_1.00_0.01/01c3aff52f2a4dffa526d7a9843d46ea.webp" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/dailydietboxes"><img src="https://static.wixstatic.com/media/0fdef751204647a3bbd7eaa2827ed4f9.png/v1/fill/w_29,h_29,al_c,q_85,usm_0.66_1.00_0.01/0fdef751204647a3bbd7eaa2827ed4f9.webp" alt="">
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <br>
-                <li>
-                    <ul class="footIcons">
-                        <li id="spGap"><a href="#">Privacy&nbsp;Policy</a></li>
-                        <li><a href="#"> Terms&nbsp;&&nbsp;Conditions </a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
     </div>
 
-
+    <div class="botcont">
+      <div id="chatBotLetsChat" class="botDiv">
+        <div class="botDiv">
+          <i class="far fa-smile-beam"></i>
+          <p>Lets Chat</p>
+        </div>
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      <div id="chatDisplay" class="chatBotDisplay"></div>
+      <div id="chatInput" class="chatBotInput">
+        <input type="text" id="chatBotTxt" placeholder="Type your message..." />
+        <i id="sendBtn" class="fas fa-paper-plane"></i>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="Order_Page.js"></script>
-</body>
-
+  </body>
 </html>

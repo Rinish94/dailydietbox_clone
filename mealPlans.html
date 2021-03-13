@@ -7,6 +7,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="mealPlans.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <style>
+        .botcont {
+          position: fixed;
+          bottom: 5px;
+          right: 10px;
+        }
+        .botDiv {
+          display: flex;
+          width: 366px;
+          height: 60px;
+          border-radius: 5px;
+          background-color: rgb(129, 193, 71);
+          font-size: 20px;
+          color: white;
+        }
+        .fa-smile-beam {
+          font-size: 35px;
+          margin: 10px;
+          margin-left: 20px;
+        }
+        .fa-chevron-up,
+        .fa-chevron-down {
+          margin: 20px;
+        }
+        .chatBotDisplay {
+          width: 346px;
+          height: 400px;
+          background-image: url("images/chatBot-Background.jpg");
+          background-size: 366px 400px;
+          border: 1px solid lightgray;
+          display: none;
+          overflow: auto;
+          padding: 10px;
+        }
+        .chatBotInput {
+          width: 366px;
+          border: none;
+          display: none;
+          border-bottom: 1px solid lightgray;
+          border-left: 1px solid lightgray;
+          border-right: 1px solid lightgray;
+          background-color: white;
+        }
+        .chatBotInput > input {
+          width: 330px;
+          height: 40px;
+          border: none;
+          font-size: 20px;
+        }
+        .chatBotInput > input:focus {
+          outline: none;
+        }
+        .chatBotInput > i {
+          font-size: 28px;
+          margin-top: 5px;
+          border: none;
+        }
+        .chatBotDisplay > div > p {
+          padding: 15px;
+          background-color: lightgreen;
+          color: white;
+          display: inline-block;
+          max-width: 200px;
+          border-radius: 5px;
+          margin: 0;
+        }
+      </style>
 </head>
 
 <body>
@@ -322,6 +393,21 @@
             </ul>
         </div>
     </div>
+    <div class="botcont">
+        <div id="chatBotLetsChat" class="botDiv">
+          <div class="botDiv">
+            <i class="far fa-smile-beam"></i>
+            <p>Lets Chat</p>
+          </div>
+          <i class="fas fa-chevron-up"></i>
+        </div>
+        <div id="chatDisplay" class="chatBotDisplay"></div>
+        <div id="chatInput" class="chatBotInput">
+          <input type="text" id="chatBotTxt" placeholder="Type your message..." />
+          <i id="sendBtn" class="fas fa-paper-plane"></i>
+        </div>
+      </div>
+      <script src="ChatBot.js"></script>
     <script src="mealPlans.js"></script>
 </body>
 

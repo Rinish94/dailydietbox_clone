@@ -1,49 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./ChatBot.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
 
-<body>
+    <style>
+      body {
+        background-color: red;
+      }
+      .botcont {
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+      }
+      .botDiv {
+        display: flex;
+        width: 366px;
+        height: 60px;
+        border-radius: 5px;
+        background-color: rgb(129, 193, 71);
+        font-size: 20px;
+        color: white;
+      }
+      .fa-smile-beam {
+        font-size: 35px;
+        margin: 10px;
+        margin-left: 20px;
+      }
+      .fa-chevron-up,
+      .fa-chevron-down {
+        margin: 20px;
+      }
+      .chatBotDisplay {
+        width: 346px;
+        height: 400px;
+        background-image: url("images/chatBot-Background.jpg");
+        background-size: 366px 400px;
+        border: 1px solid lightgray;
+        display: none;
+        overflow: auto;
+        padding: 10px;
+      }
+      .chatBotInput {
+        width: 366px;
+        border: none;
+        display: none;
+        border-bottom: 1px solid lightgray;
+        border-left: 1px solid lightgray;
+        border-right: 1px solid lightgray;
+        background-color: white;
+      }
+      .chatBotInput > input {
+        width: 330px;
+        height: 40px;
+        border: none;
+        font-size: 20px;
+      }
+      .chatBotInput > input:focus {
+        outline: none;
+      }
+      .chatBotInput > i {
+        font-size: 28px;
+        margin-top: 5px;
+        border: none;
+      }
+      .chatBotDisplay > div > p {
+        padding: 15px;
+        background-color: lightgreen;
+        color: white;
+        display: inline-block;
+        max-width: 200px;
+        border-radius: 5px;
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
     <div class="botcont">
+      <div id="chatBotLetsChat" class="botDiv">
         <div class="botDiv">
-            <img class="smilye"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ALbMP6l8OoX7MtRnkc8IXlUbyAOMn0ELww&usqp=CAU">
-            <h2 class="bot" onclick="">Let's Chat!</h2>
-            <img class="arrow" onclick=""
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-d-vrdVyapCVY8Sv8GrEC_TK_PG90hofwSg&usqp=CAU">
-
-
-            <div class="modal-box">
-                <div class="modal_cont">
-
-                    <div class="box">
-                        <div class="top">
-                            <h3>Let's Chat</h3>
-                        </div>
-                        <div class="mid">
-                            <div class="chat">
-                                <p id="chatLog"> Hey there! Before we chat, please Sign up so we can easily get in
-                                    touch. </p>
-                            </div>
-                        </div>
-                        <div class="input">
-                            <input type="text" id="userBox" onkeydown="if(event.keyCode == 13){ talk()}"
-                                placeholder="Type your Question">
-                        </div>
-                    </div>
-                    <span class="modal-close_icon">X</span>
-                </div>
-            </div>
+          <i class="far fa-smile-beam"></i>
+          <p>Lets Chat</p>
         </div>
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      <div id="chatDisplay" class="chatBotDisplay"></div>
+      <div id="chatInput" class="chatBotInput">
+        <input type="text" id="chatBotTxt" placeholder="Type your message..." />
+        <i id="sendBtn" class="fas fa-paper-plane"></i>
+      </div>
     </div>
-
-    <script type="text/javascript" src="./ChatBot.js"></script>
-</body>
-
+    <script src="ChatBot.js"></script>
+  </body>
 </html>
