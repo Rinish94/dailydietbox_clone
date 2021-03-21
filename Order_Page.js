@@ -27,7 +27,7 @@ var itemObj = [
     image:
       "https://static.wixstatic.com/media/7d8e8d_e60255910f3c46bf93efc068f3fa912f~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_e60255910f3c46bf93efc068f3fa912f~mv2.webp",
     name: "Vanilla Coffee",
-    price: 150.0,
+    price: 140.01,
     tag: false,
     milk: ["soya milk", "milk", "amound milk"],
     category: ["veg"],
@@ -37,7 +37,7 @@ var itemObj = [
     image:
       "https://static.wixstatic.com/media/7d8e8d_7927b6d48faa4943978eda7f9bf1a96e~mv2.jpeg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_7927b6d48faa4943978eda7f9bf1a96e~mv2.webp",
     name: "French Toasts",
-    price: 130.0,
+    price: 150.0,
     tag: "Veg & Egg",
     milk: ["soya milk", "milk", "amound milk"],
     category: ["veg", "eggs"],
@@ -47,7 +47,7 @@ var itemObj = [
     image:
       "https://static.wixstatic.com/media/7d8e8d_f7f9be136cb94755bdad4b5790e313b0~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_f7f9be136cb94755bdad4b5790e313b0~mv2.webp",
     name: "Almond Coconut",
-    price: 130.0,
+    price: 160.99,
     tag: false,
     milk: ["soya milk", "milk", "amound milk"],
     seeds: ["sesame", "pumpkin", "flax", "chia"],
@@ -58,7 +58,7 @@ var itemObj = [
     image:
       "https://static.wixstatic.com/media/7d8e8d_d21778d4dfc54492a2c0d655277c84cf~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_d21778d4dfc54492a2c0d655277c84cf~mv2.webp",
     name: "Oatmeal Berry",
-    price: 130.0,
+    price: 80.89,
     tag: "Shake",
     milk: ["soya milk", "milk", "amound milk"],
     category: ["veg"],
@@ -68,7 +68,7 @@ var itemObj = [
     image:
       "https://static.wixstatic.com/media/7d8e8d_c85bf623ca444d02a538f26bbb183d99~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_c85bf623ca444d02a538f26bbb183d99~mv2.webp",
     name: "Oats Pancakes",
-    price: 130.0,
+    price: 90.0,
     tag: "Veg",
     seeds: ["sesame", "pumpkin", "flax", "chia"],
     category: ["veg"],
@@ -78,7 +78,7 @@ var itemObj = [
     image:
       "https://static.wixstatic.com/media/7d8e8d_c85bf623ca444d02a538f26bbb183d99~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_c85bf623ca444d02a538f26bbb183d99~mv2.webp",
     name: "Scrumbled Chickpeas on Toast",
-    price: 130.0,
+    price: 110.0,
     tag: "Veg",
     milk: ["soya milk", "milk", "amound milk"],
     category: ["veg"],
@@ -88,7 +88,7 @@ var itemObj = [
     image:
       "https://static.wixstatic.com/media/7d8e8d_c85bf623ca444d02a538f26bbb183d99~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_c85bf623ca444d02a538f26bbb183d99~mv2.webp",
     name: "Scrumbled Eggs on Toast",
-    price: 130.0,
+    price: 125.09,
     tag: "Egg",
     category: ["eggs"],
   },
@@ -97,7 +97,7 @@ var itemObj = [
     image:
       "https://static.wixstatic.com/media/7d8e8d_3e0b03e70e634dd085ea2a0fc62cec4a~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_3e0b03e70e634dd085ea2a0fc62cec4a~mv2.webp",
     name: "Overnigh Oats",
-    price: 130.0,
+    price: 179.99,
     tag: "Veg(Dairy & Non-Dairy)",
     milk: ["soya milk", "milk", "amound milk"],
     seeds: ["sesame", "pumpkin", "flax", "chia"],
@@ -108,7 +108,7 @@ var itemObj = [
     image:
       "https://static.wixstatic.com/media/7d8e8d_0ca6a64ee96744cb927bf60b70dcd731~mv2.jpg/v1/fill/w_436,h_328,al_c,q_80,usm_0.66_1.00_0.01/7d8e8d_0ca6a64ee96744cb927bf60b70dcd731~mv2.webp",
     name: "Boiled Eggs",
-    price: 130.0,
+    price: 59.0,
     tag: "Eggs",
     category: ["eggs"],
   },
@@ -117,7 +117,7 @@ var itemObj = [
     image:
       "https://static.wixstatic.com/media/7d8e8d_9c50cb3ffb034d4782e2b09dccf2d385~mv2.jpg/v1/fill/w_436,h_328,al_c,lg_1,q_80/7d8e8d_9c50cb3ffb034d4782e2b09dccf2d385~mv2.webp",
     name: "Tripled Layered Sandwich",
-    price: 130.0,
+    price: 85.99,
     tag: "Veg, Non-Veg & Egg",
     seeds: ["sesame", "pumpkin", "flax", "chia"],
     category: ["veg", "chicken", "eggs"],
@@ -404,7 +404,7 @@ function addItems(data) {
   let price = document.createElement("p");
   let checkPrice = document.createElement("span");
   var rupee = document.createElement("i");
-  rupee.setAttribute("class", "fa fa-rupee");
+  rupee.setAttribute("class", "fas fa-rupee-sign");
   card.setAttribute("class", "card");
   card.setAttribute("id", data.id);
   cardImg.setAttribute("class", "card-img");
@@ -503,7 +503,7 @@ $(function () {
     max: itemMax,
     values: [itemMin, itemMax],
     slide: function (event, ui) {
-      $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+      $("#amount").val("Rs " + ui.values[0] + "   -   Rs" + ui.values[1]);
       data = JSON.parse(localStorage.getItem("data"));
       data = data.filter((el) => {
         if (el.price >= ui.values[0] && el.price <= ui.values[1]) {
@@ -516,9 +516,9 @@ $(function () {
     },
   });
   $("#amount").val(
-    "$" +
+    "Rs " +
       $("#slider-range").slider("values", 0) +
-      " - $" +
+      "   -   Rs " +
       $("#slider-range").slider("values", 1)
   );
 });
@@ -779,6 +779,7 @@ function sendMsg() {
     div.append(p);
     div.style.textAlign = "right";
     document.getElementById("chatDisplay").append(div);
+    document.getElementById("chatBotTxt").value = "";
     setTimeout(() => {
       botSendMsg(chatBotTxt);
     }, 1000);
